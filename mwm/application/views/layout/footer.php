@@ -118,6 +118,7 @@
         $(document).ready(function() {
             $('#drive').DataTable( {
             "searching" : false,
+            "fixedHeader": true,
                 columnDefs: [ {
                     scrollX: true,
                     orderable: false,
@@ -136,6 +137,7 @@
 
             $('#drive2').DataTable( {
             "searching" : false,
+            "fixedHeader": true,
                 'columnDefs': [
                 {
                     'targets': 0,

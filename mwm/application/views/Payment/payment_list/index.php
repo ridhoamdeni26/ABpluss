@@ -199,18 +199,54 @@
 
 	            <div class="form-group">
 	            	<label class="control-label col-md-3 col-sm-3 col-xs-12" for="ads_name"> Upload Date <span class="required"></span></label>
-                  <div class="col-md-9 col-sm-9 col-xs-12 item has-feedback">
-                    <input type="text" id="detail_driver" name="detail_driver" required="required" class="form-control col-md-7 col-xs-12 dtpicker has-feedback-left" value="" placeholder="Date" />
-                      <span class="glyphicon glyphicon-calendar form-control-feedback left" aria-hidden="true"></span>
-                  </div>
+                  	<div class='col-md-9 col-sm-9 col-xs-12'>
+	                    <input type='text' class="form-control" id='detail_driver'/>
+	                </div>
                 </div>
 
+                <div class="form-group">
+	                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="ads_name"> Preview Image Sticker and Odo <span class="required"></span></label>
+	                <div class="col-md-3 col-sm-3 col-xs-12">
+					  <img id="image-sticker" src="<?php echo base_url() ?>assets/build/images/user.png" alt="Preview Image Sticker" onclick="openModal();currentSlide(1)"/>
+					  <div class="clearfix"></div>
+					</div>
+
+					<div class="col-md-3 col-sm-3 col-xs-12">
+				  		<img id="image-odo" src="<?php echo base_url() ?>assets/build/images/logoAB.png" alt="Preview Image Odo" onclick="openModal();currentSlide(2)"/>
+					<div class="clearfix"></div>
+					</div>
+
+				</div>
+				<br/>
+				
         	</form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
+
+      <!-- The Modal/Lightbox -->
+<div id="imageModal" class="modal-image">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content-image">
+
+    <div class="mySlides">
+      <div class="numbertext">1 / 2</div>
+      <img src="<?php echo base_url() ?>assets/build/images/user.png" alt="Preview Image Sticker" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 2</div>
+      <img src="<?php echo base_url() ?>assets/build/images/logoAB.png" alt="Preview Image Odo" style="width:100%">
+    </div>
+
+    <!-- Next/previous controls -->
+    <a class="prev-image" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next-image" onclick="plusSlides(1)">&#10095;</a>
+
+    </div>
+  </div>
       
     </div>
   </div>
@@ -221,5 +257,47 @@
 
   <br />
 <!-- /page content -->
+<script>
+// Open the Modal
+function openModal() {
+  document.getElementById('imageModal').style.display = "block";
+}
+
+// Close the Modal
+function closeModal() {
+  document.getElementById('imageModal').style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
 
 
