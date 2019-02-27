@@ -235,204 +235,6 @@
 				            </td>
 				            <td><p align="center"><button type="button" data-toggle="modal" data-target="#routeModal" class="btn btn-info">Detail</button></p></td>
 				        </tr>
-				        <tr>
-				        	<td></td>
-				        	<td>2</td>
-				            <td>B 4212 KIL</td>
-				            <td>Yamaha Mio</td>
-				            <td>
-				            	<!-- <p align="center"><button disabled="disabled" type="button" class="btn btn-success">Active</i></button></p> -->
-				            	<p align="center"><button disabled="disabled" type="button" class="btn btn-warning">Deactive</i></button></p>
-				            </td>
-				            <td><p align="center"><button type="button" data-toggle="modal" data-target="#routeModal" class="btn btn-info">Detail</button></p></td>
-				        </tr>
-				        <tr>
-				        	<td></td>
-				        	<td>2</td>
-				            <td>B 4212 KIL</td>
-				            <td>Yamaha Mio</td>
-				            <td>
-				            	<!-- <p align="center"><button disabled="disabled" type="button" class="btn btn-success">Active</i></button></p> -->
-				            	<p align="center"><button disabled="disabled" type="button" class="btn btn-warning">Deactive</i></button></p>
-				            </td>
-				            <td><p align="center"><button type="button" data-toggle="modal" data-target="#routeModal" class="btn btn-info">Detail</button></p></td>
-				        </tr>
-				        <tr>
-				        	<td></td>
-				        	<td>2</td>
-				            <td>B 4212 KIL</td>
-				            <td>Yamaha Mio</td>
-				            <td>
-				            	<!-- <p align="center"><button disabled="disabled" type="button" class="btn btn-success">Active</i></button></p> -->
-				            	<p align="center"><button disabled="disabled" type="button" class="btn btn-warning">Deactive</i></button></p>
-				            </td>
-				            <td><p align="center"><button type="button" data-toggle="modal" data-target="#routeModal" class="btn btn-info">Detail</button></p></td>
-				        </tr>
-				        <tr>
-				        	<td></td>
-				        	<td>2</td>
-				            <td>B 4212 KIL</td>
-				            <td>Yamaha Mio</td>
-				            <td>
-				            	<!-- <p align="center"><button disabled="disabled" type="button" class="btn btn-success">Active</i></button></p> -->
-				            	<p align="center"><button disabled="disabled" type="button" class="btn btn-warning">Deactive</i></button></p>
-				            </td>
-				            <td><p align="center"><button type="button" data-toggle="modal" data-target="#routeModal" class="btn btn-info">Detail</button></p></td>
-				        </tr>
-				        <tr>
-				        	<td></td>
-				        	<td>2</td>
-				            <td>B 4212 KIL</td>
-				            <td>Yamaha Mio</td>
-				            <td>
-				            	<!-- <p align="center"><button disabled="disabled" type="button" class="btn btn-success">Active</i></button></p> -->
-				            	<p align="center"><button disabled="disabled" type="button" class="btn btn-warning">Deactive</i></button></p>
-				            </td>
-				            <td><p align="center"><button type="button" data-toggle="modal" data-target="#routeModal" class="btn btn-info">Detail</button></p></td>
-				        </tr>
-				        <tr>
-				        	<td></td>
-				        	<td>2</td>
-				            <td>B 4212 KIL</td>
-				            <td>Yamaha Mio</td>
-				            <td>
-				            	<!-- <p align="center"><button disabled="disabled" type="button" class="btn btn-success">Active</i></button></p> -->
-				            	<p align="center"><button disabled="disabled" type="button" class="btn btn-warning">Deactive</i></button></p>
-				            </td>
-				            <td><p align="center"><button type="button" data-toggle="modal" data-target="#routeModal" class="btn btn-info">Detail</button></p></td>
-				        </tr>
-				        <tr>
-				        	<td></td>
-				        	<td>2</td>
-				            <td>B 4212 KIL</td>
-				            <td>Yamaha Mio</td>
-				            <td>
-				            	<!-- <p align="center"><button disabled="disabled" type="button" class="btn btn-success">Active</i></button></p> -->
-				            	<p align="center"><button disabled="disabled" type="button" class="btn btn-warning">Deactive</i></button></p>
-				            </td>
-				            <td><p align="center"><button type="button" data-toggle="modal" data-target="#routeModal" class="btn btn-info">Detail</button></p></td>
-				        </tr>
-				        <tr>
-				        	<td></td>
-				        	<td>2</td>
-				            <td>B 4212 KIL</td>
-				            <td>Yamaha Mio</td>
-				            <td>
-				            	<!-- <p align="center"><button disabled="disabled" type="button" class="btn btn-success">Active</i></button></p> -->
-				            	<p align="center"><button disabled="disabled" type="button" class="btn btn-warning">Deactive</i></button></p>
-				            </td>
-				            <td><p align="center"><button type="button" data-toggle="modal" data-target="#routeModal" class="btn btn-info">Detail</button></p></td>
-				        </tr>
-				        <tr>
-				        	<td></td>
-				        	<td>2</td>
-				            <td>B 4212 KIL</td>
-				            <td>Yamaha Mio</td>
-				            <td>
-				            	<!-- <p align="center"><button disabled="disabled" type="button" class="btn btn-success">Active</i></button></p> -->
-				            	<p align="center"><button disabled="disabled" type="button" class="btn btn-warning">Deactive</i></button></p>
-				            </td>
-				            <td><p align="center"><button type="button" data-toggle="modal" data-target="#routeModal" class="btn btn-info">Detail</button></p></td>
-				        </tr>
-				        <tr>
-				        	<td></td>
-				        	<td>2</td>
-				            <td>B 4212 KIL</td>
-				            <td>Yamaha Mio</td>
-				            <td>
-				            	<!-- <p align="center"><button disabled="disabled" type="button" class="btn btn-success">Active</i></button></p> -->
-				            	<p align="center"><button disabled="disabled" type="button" class="btn btn-warning">Deactive</i></button></p>
-				            </td>
-				            <td><p align="center"><button type="button" data-toggle="modal" data-target="#routeModal" class="btn btn-info">Detail</button></p></td>
-				        </tr>
-				        <tr>
-				        	<td></td>
-				        	<td>2</td>
-				            <td>B 4212 KIL</td>
-				            <td>Yamaha Mio</td>
-				            <td>
-				            	<!-- <p align="center"><button disabled="disabled" type="button" class="btn btn-success">Active</i></button></p> -->
-				            	<p align="center"><button disabled="disabled" type="button" class="btn btn-warning">Deactive</i></button></p>
-				            </td>
-				            <td><p align="center"><button type="button" data-toggle="modal" data-target="#routeModal" class="btn btn-info">Detail</button></p></td>
-				        </tr>
-				        <tr>
-				        	<td></td>
-				        	<td>2</td>
-				            <td>B 4212 KIL</td>
-				            <td>Yamaha Mio</td>
-				            <td>
-				            	<!-- <p align="center"><button disabled="disabled" type="button" class="btn btn-success">Active</i></button></p> -->
-				            	<p align="center"><button disabled="disabled" type="button" class="btn btn-warning">Deactive</i></button></p>
-				            </td>
-				            <td><p align="center"><button type="button" data-toggle="modal" data-target="#routeModal" class="btn btn-info">Detail</button></p></td>
-				        </tr>
-				        <tr>
-				        	<td></td>
-				        	<td>2</td>
-				            <td>B 4212 KIL</td>
-				            <td>Yamaha Mio</td>
-				            <td>
-				            	<!-- <p align="center"><button disabled="disabled" type="button" class="btn btn-success">Active</i></button></p> -->
-				            	<p align="center"><button disabled="disabled" type="button" class="btn btn-warning">Deactive</i></button></p>
-				            </td>
-				            <td><p align="center"><button type="button" data-toggle="modal" data-target="#routeModal" class="btn btn-info">Detail</button></p></td>
-				        </tr>
-				        <tr>
-				        	<td></td>
-				        	<td>2</td>
-				            <td>B 4212 KIL</td>
-				            <td>Yamaha Mio</td>
-				            <td>
-				            	<!-- <p align="center"><button disabled="disabled" type="button" class="btn btn-success">Active</i></button></p> -->
-				            	<p align="center"><button disabled="disabled" type="button" class="btn btn-warning">Deactive</i></button></p>
-				            </td>
-				            <td><p align="center"><button type="button" data-toggle="modal" data-target="#routeModal" class="btn btn-info">Detail</button></p></td>
-				        </tr>
-				        <tr>
-				        	<td></td>
-				        	<td>2</td>
-				            <td>B 4212 KIL</td>
-				            <td>Yamaha Mio</td>
-				            <td>
-				            	<!-- <p align="center"><button disabled="disabled" type="button" class="btn btn-success">Active</i></button></p> -->
-				            	<p align="center"><button disabled="disabled" type="button" class="btn btn-warning">Deactive</i></button></p>
-				            </td>
-				            <td><p align="center"><button type="button" data-toggle="modal" data-target="#routeModal" class="btn btn-info">Detail</button></p></td>
-				        </tr>
-				        <tr>
-				        	<td></td>
-				        	<td>2</td>
-				            <td>B 4212 KIL</td>
-				            <td>Yamaha Mio</td>
-				            <td>
-				            	<!-- <p align="center"><button disabled="disabled" type="button" class="btn btn-success">Active</i></button></p> -->
-				            	<p align="center"><button disabled="disabled" type="button" class="btn btn-warning">Deactive</i></button></p>
-				            </td>
-				            <td><p align="center"><button type="button" data-toggle="modal" data-target="#routeModal" class="btn btn-info">Detail</button></p></td>
-				        </tr>
-				        <tr>
-				        	<td></td>
-				        	<td>2</td>
-				            <td>B 4212 KIL</td>
-				            <td>Yamaha Mio</td>
-				            <td>
-				            	<!-- <p align="center"><button disabled="disabled" type="button" class="btn btn-success">Active</i></button></p> -->
-				            	<p align="center"><button disabled="disabled" type="button" class="btn btn-warning">Deactive</i></button></p>
-				            </td>
-				            <td><p align="center"><button type="button" data-toggle="modal" data-target="#routeModal" class="btn btn-info">Detail</button></p></td>
-				        </tr>
-				        <tr>
-				        	<td></td>
-				        	<td>2</td>
-				            <td>B 4212 KIL</td>
-				            <td>Yamaha Mio</td>
-				            <td>
-				            	<!-- <p align="center"><button disabled="disabled" type="button" class="btn btn-success">Active</i></button></p> -->
-				            	<p align="center"><button disabled="disabled" type="button" class="btn btn-warning">Deactive</i></button></p>
-				            </td>
-				            <td><p align="center"><button type="button" data-toggle="modal" data-target="#routeModal" class="btn btn-info">Detail</button></p></td>
-				        </tr>
 				    </tbody>
 				</table>
 				<div class="clearfix"></div>
@@ -519,7 +321,6 @@ function initMap() {
 		success		: function(result) {
 			for (i =0; i<result.length; i++) {
 				if(result[i]['id']==province){
-					//console.log(result[i]['latitude']);
 					lat 	= parseFloat(result[i]['latitude']);
 					lng 	= parseFloat(result[i]['longitude']);
 					break;
@@ -532,44 +333,38 @@ function initMap() {
 	var map = new google.maps.Map(document.getElementById('googleMap'), {
 		zoom 				: 12,
 		center 				: {lat: lat, lng: lng},
+		gestureHandling		: 'greedy',
 		mapTypeId 			: google.maps.MapTypeId.ROADMAP,
 	});
 
-	
-	var beaches = [
-		  ['test1', "B 2761 POM", -6.11259, 106.7375],
-		  ['test2', "B 4812 SWT", -6.112938, 106.738],
-		  ['test3', "B 1111 NIU", -6.113492, 106.7384],
-		  ['test4', "B 8901 POL", -6.114809, 106.7376]
-		];
-
 	function setMarkers(map) {
-        for (var i = 0; i < beaches.length; i++) {
-          var beach = beaches[i];
+		$.ajax({
+		url 		: SITE_URL + 'assets/datanew.json',
+		method		: 'get',
+		dataType	: 'json',
+		async : false,
+      	cache : false,
+		success		: function(result) {
+			var data = result['results'][1]['data']
+			for (var i = 0; i < data.length; i++) {
+			var beach = data[i];
 
-      //     var contentString = beach[1]
+				var marker = new google.maps.Marker({
+		            position: {lat: parseFloat(beach[1]), lng: parseFloat(beach[2])},
+		            map: map,
+		            icon: "<?php echo base_url() ?>assets/build/images/mobil.png",
+		            info: beach[0] +' '+ beach[4],
+	         	});
 
-      //     var infowindow = new google.maps.InfoWindow({
-      //     content: contentString
-    		// });
+				var infowindow3 = new google.maps.InfoWindow();
+	         	google.maps.event.addListener(marker, 'mouseover', function () {
+	         		infowindow3.setContent(this.info);                              
+					infowindow3.open(map, this);  
+	         	});
+			}
+		}
 
-          var marker = new google.maps.Marker({
-            position: {lat: beach[2], lng: beach[3]},
-            map: map,
-            icon: "<?php echo base_url() ?>assets/build/images/mobil.png",
-            info: beach[1],
-          });
-
-          var infowindow3 = new google.maps.InfoWindow();
-			google.maps.event.addListener(marker, 'mouseover', function () {
-			        infowindow3.setContent(this.info);                              
-			        infowindow3.open(map, this);                        
-			});
-
-        }
-    //     marker.addListener('click', function() {
-		  //   infowindow.open(map, marker);
-		  // });
+		});
       }
     setMarkers(map);
 }

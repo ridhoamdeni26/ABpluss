@@ -43,6 +43,66 @@
     <link href="<?php echo base_url() ?>assets/pagination/pagination.css" rel="stylesheet">
     <script src="<?php echo base_url() ?>assets/select/jquery/jquery-3.3.1.min.js"></script>
     <style type="text/css">
+/* Search 4 - appear looking glass */
+.demo-4{
+    overflow: hidden;
+    width: 300px;
+    vertical-align: middle;
+    white-space: nowrap;
+  /* position: relative; */
+}
+.demo-4 input#search{
+  width: 285px;
+  height: 50px;
+  background: rgba(0,0,0,0.3);
+  border: none;
+  font-size: 10pt;
+  float: left;
+    color: #ffffff;
+  padding-left: 15px;
+  
+  -webkit-transition: all .55s ease;
+  -moz-transition: all .55s ease;
+  -ms-transition: all .55s ease;
+  -o-transition: all .55s ease;
+  transition: all .55s ease;
+}
+
+.demo-4 input#search::-webkit-input-placeholder {
+   color: #ffffff;
+}
+.demo-4 input#search:-moz-placeholder { /* Firefox 18- */
+   color: #ffffff;  
+}
+.demo-4 input#search::-moz-placeholder {  /* Firefox 19+ */
+   color: #ffffff;  
+}
+.demo-4 input#search:-ms-input-placeholder {  
+   color: #ffffff;  
+}
+
+.demo-4 button.icon{
+  border: none;
+  background: #E6E6FA;
+  height: 50px;
+  width: 50px;
+  color: #4f5b66;
+  opacity: 0;
+  font-size: 10pt;
+  -webkit-transition: all .55s ease;
+  -moz-transition: all .55s ease;
+  -ms-transition: all .55s ease;
+  -o-transition: all .55s ease;
+  transition: all .55s ease;
+}
+
+  /* ANIMATION EFFECT SEARCH ENGINE */
+  .demo-4:hover button.icon, .demo-4:active button.icon, .demo-4:focus button.icon{
+    outline:none;
+    opacity: 1;
+    margin-left: -50px;
+  }
+
     img:hover {
           box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
         }

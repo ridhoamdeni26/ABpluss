@@ -162,6 +162,7 @@
 
             $('#report').DataTable( {
             "searching" : false,
+            "fixedHeader": true,
             "columnDefs": [ {
                 "orderable": true,
                 "scrollX": true
