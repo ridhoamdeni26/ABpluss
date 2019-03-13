@@ -12,6 +12,8 @@
     <!-- Bootstrap -->
     <link href="<?php echo base_url() ?>assets/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    <!-- datatables -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/select/1.2.7/css/select.dataTables.min.css">
     <!-- Font Awesome -->
     <link href="<?php echo base_url() ?>assets/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- NProgress -->
@@ -30,7 +32,7 @@
     <link href="<?php echo base_url() ?>assets/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo base_url() ?>assets/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo base_url() ?>assets/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
-    <link href="<?php echo base_url() ?>assets/vendors/datatables.net-select/select.dataTables.min.css" rel="stylesheet">
+    <!-- <link href="https://cdn.datatables.net/select/1.3.0/css/select.dataTables.min.css"> -->
     <!-- bootstrap-datetimepicker -->
     <link href="<?php echo base_url() ?>assets/vendors/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css" rel="stylesheet">
     <!-- Custom Theme Style -->
@@ -132,15 +134,4 @@
             height : 150px;
         }
     </style>
-    <!-- <style type="text/css">
-        th {
-      border-top: 1px solid #dddddd;
-      border-bottom: 1px solid #dddddd;
-      border-right: 1px solid #dddddd;
-    }
-    .dataTableLayout {
-    table-layout:fixed;
-    width:100%;
-    }
-    </style> -->
   </head>

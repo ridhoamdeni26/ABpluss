@@ -60,23 +60,7 @@
             </div>
             <br>
 
-            <div class="col-md-6 col-sm-6 col-xs-12">
-            	<div class="form-group">
-      				<label class="control-label col-md-3 col-sm-3 col-xs-12">Area</label>
-      					<div class="col-md-9 col-sm-9 col-xs-12">
-      						<input type="text" id="area" name="area" required="required" class="form-control">
-      					</div>
-      				<div class="clearfix"></div>
-      			</div>
-      			<br>
-
-      			<div align="right" class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
-                  <button type="submit" id="send" class="btn btn-success"><i class="fa fa-search"> Search </i></button>
-                </div>
-                <div class="clearfix"></div>
-                <br>
-                <br>
-
+            <div class="col-md-12 col-sm-12 col-xs-12">
             	<table id="drive" class="table table-striped table-bordered" style="width:100%">
 				    <thead>
 				        <tr>
@@ -85,45 +69,12 @@
 				            <th>Jumlah Unit</th>
 				        </tr>
 				    </thead>
-				    <tbody>
-				        <tr>
-				        	<td></td>
-				            <td>Medan</td>
-				            <td>50</td>
-				        </tr>
-				        <tr>
-				        	<td></td>
-				            <td>Bekasi</td>
-				            <td>1</td>
-				        </tr>
+				    <tbody id="tableArea">
 				    </tbody>
 				</table>
             </div>
 
-            <div class="col-md-6 col-sm-6 col-xs-12">
-
-            	<div class="form-group">
-      				<label class="control-label col-md-3 col-sm-3 col-xs-12">Plat Number</label>
-      					<div class="col-md-9 col-sm-9 col-xs-12">
-      						<input type="text" id="plat" name="plat" required="required" class="form-control">
-      					</div>
-      				<div class="clearfix"></div>
-      			</div>
-
-                <div class="form-group">
-      				<label class="control-label col-md-3 col-sm-3 col-xs-12">Type Unit</label>
-      					<div class="col-md-9 col-sm-9 col-xs-12">
-      						<input type="text" id="unit" name="unit" required="required" class="form-control">
-      					</div>
-      				<div class="clearfix"></div>
-      			</div>
-      			<br>
-
-      			<div align="right" class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
-                  <button type="submit" id="send" class="btn btn-success"><i class="fa fa-search"> Search </i></button>
-                </div>
-                <br>
-
+            <div class="col-md-12 col-sm-12 col-xs-12">
             	<table id="drive2" class="table table-striped table-bordered" style="width:100%">
 				    <thead>
 				        <tr>
@@ -131,118 +82,23 @@
 				        	<th>ID</th>
 				            <th>Plat Number</th>
 				            <th>Unit</th>
+				            <th>Mileage</th>
+				            <th>Last Location</th>
 				            <th>Status</th>
 				            <th>Detail</th>
 				        </tr>
 				    </thead>
-				    <tbody>
-				        <tr>
-				        	<td></td>
-				        	<td>1</td>
-				            <td>B 4726 POL</td>
-				            <td>Honda Scoopy</td>
-				            <td>
-				            	<p align="center"><button disabled="disabled" type="button" class="btn btn-success">Active</i></button></p>
-				            	<!-- <p align="center"><button disabled="disabled" type="button" class="btn btn-warning">Deactive</i></button></p> -->
-				            </td>
-				            <td><p align="center"><button type="button" data-toggle="modal" data-target="#routeModal" class="btn btn-info">Detail</button></p></td>
-				        </tr>
-				        <tr>
-				        	<td></td>
-				        	<td>2</td>
-				            <td>B 4212 KIL</td>
-				            <td>Yamaha Mio</td>
-				            <td>
-				            	<!-- <p align="center"><button disabled="disabled" type="button" class="btn btn-success">Active</i></button></p> -->
-				            	<p align="center"><button disabled="disabled" type="button" class="btn btn-warning">Deactive</i></button></p>
-				            </td>
-				            <td><p align="center"><button type="button" data-toggle="modal" data-target="#routeModal" class="btn btn-info">Detail</button></p></td>
-				        </tr>
-				        <tr>
-				        	<td></td>
-				        	<td>3</td>
-				            <td>B 9810 GUI</td>
-				            <td>Honda Scoopy</td>
-				            <td>
-				            	<p align="center"><button disabled="disabled" type="button" class="btn btn-success">Active</i></button></p>
-				            	<!-- <p align="center"><button disabled="disabled" type="button" class="btn btn-warning">Deactive</i></button></p> -->
-				            </td>
-				            <td><p align="center"><button type="button" data-toggle="modal" data-target="#routeModal" class="btn btn-info">Detail</button></p></td>
-				        </tr>
-				        <tr>
-				        	<td></td>
-				        	<td>4</td>
-				            <td>B 7712 MIL</td>
-				            <td>Yamaha Mio</td>
-				            <td>
-				            	<!-- <p align="center"><button disabled="disabled" type="button" class="btn btn-success">Active</i></button></p> -->
-				            	<p align="center"><button disabled="disabled" type="button" class="btn btn-warning">Deactive</i></button></p>
-				            </td>
-				            <td><p align="center"><button type="button" data-toggle="modal" data-target="#routeModal" class="btn btn-info">Detail</button></p></td>
-				        </tr>
-				        <tr>
-				        	<td></td>
-				        	<td>5</td>
-				            <td>B 9819 JUM</td>
-				            <td>Yamaha Mio</td>
-				            <td>
-				            	<p align="center"><button disabled="disabled" type="button" class="btn btn-success">Active</i></button></p>
-				            	<!-- <p align="center"><button disabled="disabled" type="button" class="btn btn-warning">Deactive</i></button></p> -->
-				            </td>
-				            <td><p align="center"><button type="button" data-toggle="modal" data-target="#routeModal" class="btn btn-info">Detail</button></p></td>
-				        </tr>
-				        <tr>
-				        	<td></td>
-				        	<td>2</td>
-				            <td>B 4212 KIL</td>
-				            <td>Yamaha Mio</td>
-				            <td>
-				            	<!-- <p align="center"><button disabled="disabled" type="button" class="btn btn-success">Active</i></button></p> -->
-				            	<p align="center"><button disabled="disabled" type="button" class="btn btn-warning">Deactive</i></button></p>
-				            </td>
-				            <td><p align="center"><button type="button" data-toggle="modal" data-target="#routeModal" class="btn btn-info">Detail</button></p></td>
-				        </tr>
-				        <tr>
-				        	<td></td>
-				        	<td>2</td>
-				            <td>B 4212 KIL</td>
-				            <td>Yamaha Mio</td>
-				            <td>
-				            	<!-- <p align="center"><button disabled="disabled" type="button" class="btn btn-success">Active</i></button></p> -->
-				            	<p align="center"><button disabled="disabled" type="button" class="btn btn-warning">Deactive</i></button></p>
-				            </td>
-				            <td><p align="center"><button type="button" data-toggle="modal" data-target="#routeModal" class="btn btn-info">Detail</button></p></td>
-				        </tr>
-				        <tr>
-				        	<td></td>
-				        	<td>2</td>
-				            <td>B 4212 KIL</td>
-				            <td>Yamaha Mio</td>
-				            <td>
-				            	<!-- <p align="center"><button disabled="disabled" type="button" class="btn btn-success">Active</i></button></p> -->
-				            	<p align="center"><button disabled="disabled" type="button" class="btn btn-warning">Deactive</i></button></p>
-				            </td>
-				            <td><p align="center"><button type="button" data-toggle="modal" data-target="#routeModal" class="btn btn-info">Detail</button></p></td>
-				        </tr>
-				        <tr>
-				        	<td></td>
-				        	<td>2</td>
-				            <td>B 4212 KIL</td>
-				            <td>Yamaha Mio</td>
-				            <td>
-				            	<!-- <p align="center"><button disabled="disabled" type="button" class="btn btn-success">Active</i></button></p> -->
-				            	<p align="center"><button disabled="disabled" type="button" class="btn btn-warning">Deactive</i></button></p>
-				            </td>
-				            <td><p align="center"><button type="button" data-toggle="modal" data-target="#routeModal" class="btn btn-info">Detail</button></p></td>
-				        </tr>
+				    <tbody id="tableDriver">
 				    </tbody>
 				</table>
 				<div class="clearfix"></div>
 				<br>
 				<br>
-				<div align="right" class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
-                  <button type="submit" class="btn btn-success"><i class="fa fa-check"> Search </i></button>
-                </div>
+				<div align="right" class="col-md-12 col-sm-12 col-xs-12">
+	              <button onclick="getSelectedDriver()" type="submit" class="btn btn-success"><i class="fa fa-check"></i> Search</button>
+	              <button type="submit" id="locate" class="btn btn-success"><i class="fa fa-check"></i> Locate </button>
+	              <button id="test" type="submit" class="btn btn-success"><i class="fa fa-check"></i> test</button>
+            	</div>
             </div>
 
 
@@ -303,6 +159,12 @@
 <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAj7tSdjukVN4virXCXLUnKLJ4UR_gXVG0&libraries=visualization&callback=initialize" async defer></script>
 <script type="text/javascript">
 var SITE_URL = "<?php echo site_url() ?>";
+var markers = [];
+var lastLocationsData = false
+var map 
+var global_gps_data
+var selected_data = []
+
 function initialize() {
   initMap();
   initAutocomplete();
@@ -330,45 +192,140 @@ function initMap() {
 
 	});
 
-	var map = new google.maps.Map(document.getElementById('googleMap'), {
-		zoom 				: 12,
+	map = new google.maps.Map(document.getElementById('googleMap'), {
+		zoom 				: 7,
 		center 				: {lat: lat, lng: lng},
 		gestureHandling		: 'greedy',
 		mapTypeId 			: google.maps.MapTypeId.ROADMAP,
 	});
 
-	function setMarkers(map) {
-		$.ajax({
+}
+function getArea(){
+	$.ajax({
 		url 		: SITE_URL + 'assets/datanew.json',
 		method		: 'get',
 		dataType	: 'json',
 		async : false,
-      	cache : false,
+	  	cache : false,
 		success		: function(result) {
+			var cities = result['results'][0]['cities']
 			var data = result['results'][1]['data']
+			global_gps_data = data
+			lastLocationsData = data
+			var totalMileage = 0
 			for (var i = 0; i < data.length; i++) {
-			var beach = data[i];
-
-				var marker = new google.maps.Marker({
-		            position: {lat: parseFloat(beach[1]), lng: parseFloat(beach[2])},
-		            map: map,
-		            icon: "<?php echo base_url() ?>assets/build/images/mobil.png",
-		            info: beach[0] +' '+ beach[4],
-	         	});
-
-				var infowindow3 = new google.maps.InfoWindow();
-	         	google.maps.event.addListener(marker, 'mouseover', function () {
-	         		infowindow3.setContent(this.info);                              
-					infowindow3.open(map, this);  
-	         	});
+	            var beach = data[i];
+	            totalMileage += parseFloat(beach[5])
+	        }
+			$('#totalUnit').text(data.length)
+			$('#totalMileage').text(totalMileage + ' km')
+			var table_cities = ''
+			for (var key in cities){
+				table_cities += "<tr><td></td><td>" +
+				key +
+				"</td>"
+				table_cities += "<td>" +
+				cities[key] +
+				"</td></tr>"
 			}
+			$('#tableArea').html(table_cities);
 		}
-
-		});
-      }
-    setMarkers(map);
+	});
 }
 
+function placeMarkers(map){
+	if(lastLocationsData != false){
+		renderMarkers(lastLocationsData)
+	}else{
+		$.ajax({
+			url 		: SITE_URL + 'assets/datanew.json',
+			method		: 'get',
+			dataType	: 'json',
+			async : false,
+		  	cache : false,
+			success		: function(result) {
+				gpsData = result['results'][1]['data']
+				renderMarkers(gpsData)
+		}});
+	}
+}
+
+function renderMarkers(gpsData){
+	var driverData = ''
+	$('#tableDriver').html(driverData)
+	data = gpsData
+    for (var i = 0; i < data.length; i++) {
+    var beach = data[i];
+
+	 driverData +=
+	    "<tr>"+
+	    	"<td></td>" +
+	    	"<td>" + (i+1) + "</td>" +
+	    	"<td>" + beach[0] + "</td>" +
+	    	"<td>" + "mobil" + "</td>" +
+	    	"<td>" + beach[5] + "</td>" +
+	    	"<td>" + beach[7] + "</td>" +
+	        "<td>" +
+	        	"<button disabled='disabled' type='button'" +
+	        	"class='btn " 
+    var is_engine_on = false
+     if(beach[4] == 'ENGINE ON'){
+         driverData +=
+	    "btn-success'>"
+	    is_engine_on = true
+	}else{
+         driverData +=
+	    "btn-danger'>"
+	}
+	if(is_engine_on == true){
+		driverData += "Active"
+	}else{
+		driverData += "Inactive"
+	}
+     driverData +=
+            	"</button></td>" +
+            "<td>"+
+            "<button type='button' class='btn btn-info' id='route' data-toggle='modal' " +
+            	"onclick='" + 'initHeatMap("'+ beach[0] +
+            	'",' + parseFloat(beach[1]) + ',' + 
+            	parseFloat(beach[2]) + ')' + "'"+
+            	"data-target='#routeModal'>Detail</button>" +
+        "</td></tr>"
+    }
+    $('#tableDriver').html(driverData)
+}
+
+function peta(){
+	data = selected_data
+    for (var i = 0; i < data.length; i++) {
+    var beach = data[i];
+    console.log(beach)
+
+    var marker = new google.maps.Marker({
+	    position: {lat: parseFloat(beach[1]), lng: parseFloat(beach[2])},
+	    map: map,
+	    icon: "<?php echo base_url() ?>assets/build/images/mobil.png",
+		info: beach[0] +' '+ beach[4],
+	  });
+
+	  markers.push(marker)
+	  var infowindow3 = new google.maps.InfoWindow();
+	  google.maps.event.addListener(marker, 'mouseover', function () {
+	 		infowindow3.setContent(this.info);                              
+			infowindow3.open(map, this);  
+	  });
+	}
+}
+
+
+function deleteMarkers() {
+    //Loop through all the markers and remove
+    for (var i = 0; i < markers.length; i++) {
+        markers[i].setMap(null);
+    }
+    markers = [];
+};
+getArea(map);
  //close function initmap()
 
 		function initAutocomplete() {
@@ -436,6 +393,147 @@ function initMap() {
         // event jendela di-load
         // google.maps.event.addDomListener(window, 'load', initAutocomplete);
 </script>
+<script type="text/javascript">
+	var SITE_URL = "<?php echo site_url() ?>";
+	var json_url = SITE_URL + 'assets/datanew.json';
+
+        function prepareArea() {
+            var hasil_row = $('#drive').DataTable( {
+            "searching" : true,
+            "dom": 'Bfrtip',
+            buttons: [
+                  'print',
+                  'selectAll',
+                  'selectNone'
+            ],
+            columnDefs: [ {
+                scrollX: false,
+                orderable: false,
+                className: 'select-checkbox',
+                targets: 0,
+                Targets: [ -1,0],
+                checkboxes: {
+                   selectRow: true
+                },
+            } ],
+            select: {
+                style:    'multi',
+                selector: 'td:first-child'
+            },
+            order: [[ 1, 'asc' ]]
+            } );
+
+            $('#drive tbody').on( 'click', 'tr', function () {
+		        $(this).toggleClass('selected');
+		    } );
+
+		    $('#drive2 tbody').on( 'click', 'tr', function () {
+		        $(this).toggleClass('selected');
+		    } );
+		 
+		    $('#test').click( function () {
+		    	//deleteMarkers()
+		    	selected_data = []
+				var driverData = ''
+				$('#tableDriver').html(driverData)
+		    	data =  hasil_row.rows('.selected').data();
+		    	for (var i = data.length - 1; i >= 0; i--) {
+						$.each(global_gps_data, function(index, item){
+						    if (item[7].toLowerCase() == data[i][1].toLowerCase()){
+						    selected_data.push(item)
+						    }
+						})
+					//}
+		    	}
+		    	$('#drive2').DataTable().destroy()
+		    	renderMarkers(selected_data);
+				prepareTable();
+		    } );
+        }
+
+
+
+        function prepareTable() {
+            tableDriver = $('#drive2').DataTable( {
+            "searching" : true,
+            "dom": 'Bfrtip',
+            pageLength : 10,
+            buttons: [
+                  'print',
+                  'selectAll',
+                  'selectNone'
+            ],
+            columnDefs: [ {
+                scrollX: false,
+                orderable: false,
+                className: 'select-checkbox',
+                targets: 0,
+                checkboxes: {
+                   selectRow: true
+                },
+            } ],
+            select: {
+                style:    'multi',
+                selector: 'td:first-child'
+            },
+            order: [[ 1, 'asc' ]]
+            } );
+
+            $('#detail').DataTable( {
+            "searching" : false,
+            "columnDefs": [ {
+                "orderable": true,
+                "scrollX": true
+                } ],
+            } );
+
+            $('#detail').DataTable( {
+            "searching" : false,
+            "columnDefs": [ {
+                "orderable": true,
+                "scrollX": true
+                } ],
+            } );
+
+            $('#report').DataTable( {
+            "searching" : false,
+            "fixedHeader": false,
+            "columnDefs": [ {
+                "orderable": true,
+                "scrollX": true
+                } ],
+            } );
+
+        }
+        function getSelectedDriver(){
+            console.log($('#drive2').DataTable().row( { selected: true } ));
+        }
+         $('#locate').click( function () {
+		    	//deleteMarkers()
+		    	selected_data = []
+				//var driverData = ''
+				//$('#tableDriver').html(driverData)
+		    	data =  tableDriver.rows('.selected').data();
+		    	for (var i = data.length - 1; i >= 0; i--) {
+						$.each(global_gps_data, function(index, item){
+						    // console.log(item[0].toLowerCase())
+						    // console.log( data[i][2].toLowerCase())
+						    if (item[0].toLowerCase() == data[i][2].toLowerCase()){
+						    selected_data.push(item)
+						    }
+						})
+					//}
+		    	}
+
+		    	console.log(selected_data[0])
+		    	map.setCenter(new google.maps.LatLng(parseFloat(selected_data[0][1]), parseFloat(selected_data[0][2])));
+		    	//$('#drive2').DataTable().destroy()
+		    	//renderMarkers(selected_data);
+				//prepareTable();
+		    	deleteMarkers()
+				peta()
+		    } )
+    </script>
 
 <script type="text/javascript">
         

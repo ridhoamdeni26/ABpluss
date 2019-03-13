@@ -26,21 +26,6 @@
         </div>
         <div class="x_content">
 
-        <div class="" role="tabpanel" data-example-id="togglable-tabs">
-          <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
-            <li role="presentation" class="active"><a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Info Ads</a>
-            </li>
-            <li role="presentation" class=""><a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">Summary Miliage</a>
-            </li>
-            <li role="presentation" class=""><a href="#tab_content3" role="tab" id="profile-tab2" data-toggle="tab" aria-expanded="false">Instlation</a>
-            </li>
-            <li role="presentation" class=""><a href="#tab_content4" role="tab" id="profile-tab3" data-toggle="tab" aria-expanded="false">Report</a>
-            </li>
-          </ul>
-
-          <div id="myTabContent" class="tab-content">
-            <div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
-            <br>
             <form action="#" method="post" id="demo-form" data-parsley-validate>
 
       				<div class="form-group">
@@ -88,13 +73,7 @@
            		<div class="form-group">
         				<label class="control-label col-md-3 col-sm-3 col-xs-12">Advertiser</label>
         					<div class="col-md-9 col-sm-9 col-xs-12">
-        						<select class="form-control" name="adv" id="adv">
-                      <option value="tag_heuer">TAG Heuer Indonesia</option>
-                      <option value="option1">Option one</option>
-                      <option value="option2">Option two</option>
-                      <option value="option3">Option three</option>
-                      <option value="option4">Option four</option>
-                    </select>
+                    <input type="text" id="advertiser" name="advertiser" required="required" class="form-control">
         					</div>
         					<div class="clearfix"></div>
         				</div>
@@ -572,10 +551,6 @@
 
 
             </form>
-            </div>
-
-          </div> <!-- close tab content -->
-        </div> <!-- close tabpanel -->
           
 
       </div>

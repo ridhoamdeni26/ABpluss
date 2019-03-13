@@ -31,20 +31,17 @@
     <!-- Datatables -->
     <script src="<?php echo base_url() ?>assets/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
     <script src="<?php echo base_url() ?>assets/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/select/1.3.0/js/dataTables.select.min.js"></script> 
     <script src="<?php echo base_url() ?>assets/vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
     <script src="<?php echo base_url() ?>assets/vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
-    <script src="<?php echo base_url() ?>assets/vendors/datatables.net-select/dataTables.select.min.js"></script>
     <script src="<?php echo base_url() ?>assets/vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
     <script src="<?php echo base_url() ?>assets/vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
     <script src="<?php echo base_url() ?>assets/vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
     <script src="<?php echo base_url() ?>assets/vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
-    <script src="<?php echo base_url() ?>assets/vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
-    <script src="<?php echo base_url() ?>assets/vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-    <script src="<?php echo base_url() ?>assets/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
-    <script src="<?php echo base_url() ?>assets/vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+    <script src="https://cdn.datatables.net/fixedcolumns/3.2.6/js/dataTables.fixedColumns.min.js"></script>
     <script src="<?php echo base_url() ?>assets/vendors/jszip/dist/jszip.min.js"></script>
     <script src="<?php echo base_url() ?>assets/vendors/pdfmake/build/pdfmake.min.js"></script>
-    <script src="<?php echo base_url() ?>assets/vendors/pdfmake/build/vfs_fonts.js"></script>
+    <script src="<?php echo base_url() ?>assets/vendors/pdfmake/build/vfs_fonts.js"></script> 
 
     <!-- bootstrap-daterangepicker -->
     <script src="<?php echo base_url() ?>assets/vendors/moment/min/moment.min.js"></script>
@@ -56,29 +53,9 @@
     <script src="<?php echo base_url() ?>assets/vendors/parsleyjs/dist/parsley.min.js"></script>
     <!-- Custom Theme Scripts -->
     <script src="<?php echo base_url() ?>assets/build/js/custom.min.js"></script>
-    <!-- bootstrap-wysiwyg -->
-    <script src="<?php echo base_url() ?>assets/vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js"></script>
-    <script src="<?php echo base_url() ?>assets/vendors/jquery.hotkeys/jquery.hotkeys.js"></script>
-    <script src="<?php echo base_url() ?>assets/vendors/google-code-prettify/src/prettify.js"></script>
     <!-- maskmoney -->
     <script src="<?php echo base_url() ?>assets/mask_money/dist/jquery.maskMoney.js"></script>
     <script src="<?php echo base_url() ?>assets/mask_money/dist/jquery.maskMoney.min.js"></script>
-<!--     <script>
-        function showLoader(){
-            $('#loaderContainer').removeClass('hidden');
-        }
-        function hideLoader(){
-            $('#loaderContainer').addClass('hidden');
-        }
-        function showLogin(){
-            $('#loginContainer').removeClass('hidden');
-        }
-        function loginSuccess(){
-            setTimeout(function(){ 
-              dismissPopup('loginContainer');
-            }, 3000)
-        }
-    </script> -->
 
     <!-- table role management -->
     <script type="text/javascript">
@@ -93,6 +70,8 @@
                 // $(".preloader").fadeOut();
             }, 10);
 
+            getArea();
+            prepareArea();
             // $(".preloader").fadeOut();
                 var t = $('#myTable').DataTable( {
                 "searching" : false,
@@ -114,63 +93,6 @@
     </script>
 
 <!-- table drive -->
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('#drive').DataTable( {
-            "searching" : false,
-            "fixedHeader": true,
-                columnDefs: [ {
-                    scrollX: true,
-                    orderable: false,
-                    className: 'select-checkbox',
-                    targets: 0,
-                    checkboxes: {
-                       selectRow: true
-                    },
-                } ],
-                select: {
-                    style:    'multi',
-                    selector: 'td:first-child'
-                },
-                order: [[ 1, 'asc' ]]
-            } );
-
-            $('#drive2').DataTable( {
-            "searching" : false,
-            "fixedHeader": true,
-                'columnDefs': [
-                {
-                    'targets': 0,
-                    'checkboxes': {
-                       'selectRow': true
-                    }
-                }
-              ],
-              'select': {
-                 'style': 'multi'
-              },
-              'order': [[1, 'asc']]
-            } );
-
-            $('#detail').DataTable( {
-            "searching" : false,
-            "columnDefs": [ {
-                "orderable": true,
-                "scrollX": true
-                } ],
-            } );
-
-            $('#report').DataTable( {
-            "searching" : false,
-            "fixedHeader": true,
-            "columnDefs": [ {
-                "orderable": true,
-                "scrollX": true
-                } ],
-            } );
-
-        } );
-    </script>
         
     <script type="text/javascript">
       $("#addmodal").on("shown", function(event){
