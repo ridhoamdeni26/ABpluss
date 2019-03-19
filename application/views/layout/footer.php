@@ -92,8 +92,7 @@
             } );
     </script>
 
-<!-- table drive -->
-        
+<!-- table drive -->        
     <script type="text/javascript">
       $("#addmodal").on("shown", function(event){
           modalBox.modal('show');

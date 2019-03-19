@@ -43,7 +43,6 @@
     <link href="<?php echo base_url() ?>assets/loading/loading.css" rel="stylesheet">
     <!-- pagination -->
     <link href="<?php echo base_url() ?>assets/pagination/pagination.css" rel="stylesheet">
-    <script src="<?php echo base_url() ?>assets/select/jquery/jquery-3.3.1.min.js"></script>
     <style type="text/css">
 /* Search 4 - appear looking glass */
 .demo-4{
