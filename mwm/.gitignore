@@ -1,9 +1,17 @@
 .DS_Store
 
-application/cache/*
+application\cache\*
 !application/cache/index.html
 !application/cache/.htaccess
-
+assets/vendors/*
+assets/src/*
+assets/select/*
+assets/pagination/*
+assets/mask_money/*
+assets/login/*
+assets/loading/*
+assets/admin/*
+assets/loading/*
 application/logs/*
 !application/logs/index.html
 !application/logs/.htaccess
