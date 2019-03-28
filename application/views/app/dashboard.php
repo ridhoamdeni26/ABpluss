@@ -103,9 +103,8 @@
 					<br>
 					<br>
 					<div align="right" class="col-md-12 col-sm-12 col-xs-12">
-						<button onclick="getSelectedDriver()" type="submit" class="btn btn-success"><i class="fa fa-check"></i> Search</button>
-						<button type="submit" id="locate" class="btn btn-success"><i class="fa fa-check"></i> Locate </button>
-						<button id="test" type="submit" class="btn btn-success"><i class="fa fa-check"></i> test</button>
+						<button type="submit" id="locate" class="btn btn-success"></i> Search Driver in Map </button>
+						<button id="test" type="submit" class="btn btn-success"></i> Search Data </button>
 					</div>
 				</div>
 
@@ -539,32 +538,19 @@
 		}));
 	}
 	$('#locate').click(function () {
-		//deleteMarkers()
 		selected_data = []
-		//var driverData = ''
-		//$('#tableDriver').html(driverData)
 		data = tableDriver.rows('.selected').data();
 		for (var i = data.length - 1; i >= 0; i--) {
 			$.each(global_gps_data, function (index, item) {
-				// console.log(item[0].toLowerCase())
-				// console.log( data[i][2].toLowerCase())
 				if (item[0].toLowerCase() == data[i][2].toLowerCase()) {
 					selected_data.push(item)
 				}
 			})
-			//}
 		}
 
 		console.log(selected_data[0])
 		map.setCenter(new google.maps.LatLng(parseFloat(selected_data[0][1]), parseFloat(selected_data[0][2])));
-		//$('#drive2').DataTable().destroy()
-		//renderMarkers(selected_data);
-		//prepareTable();
 		deleteMarkers()
 		peta()
 	})
-</script>
-
-<script type="text/javascript">
-
 </script>
