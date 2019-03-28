@@ -43,6 +43,9 @@
     <link href="<?php echo base_url() ?>assets/loading/loading.css" rel="stylesheet">
     <!-- pagination -->
     <link href="<?php echo base_url() ?>assets/pagination/pagination.css" rel="stylesheet">
+    <!-- ABAnalytic -->
+    <link href="<?php echo base_url() ?>assets/analytic/analytic.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <style type="text/css">
 /* Search 4 - appear looking glass */
 .demo-4{
