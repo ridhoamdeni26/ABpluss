@@ -1,13 +1,13 @@
 <div class="row">
 	<div class="col-md-12 col-sm-12 col-xs-12">
 		<div class="x_panel tile fixed">
-
 			<div class="x_title">
-				<h2>Daashboard</h2>
+				<h2>Dashboard</h2>
 				<ul class="nav navbar-right panel_toolbox">
 					<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
 					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+							aria-expanded="false"><i class="fa fa-wrench"></i></a>
 						<ul class="dropdown-menu" role="menu">
 							<li><a href="#">Settings 1</a>
 							</li>
@@ -21,14 +21,13 @@
 				<div class="clearfix"></div>
 			</div>
 			<br>
-
 			<div class="x_content">
 				<div class="row top_tiles">
 					<div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
 						<div class="tile-stats">
 							<div class="left icon"><i class="fa fa-tachometer"></i></div>
 							<div class="count">
-								<h3>124.136 KM</h3>
+								<h3 id="totalMileage">-</h3>
 							</div>
 							<h2> Total Jarak Tempuh </h2>
 							<p></p>
@@ -38,9 +37,9 @@
 						<div class="tile-stats">
 							<div class="icon"><i class="fa fa-eye"></i></div>
 							<div class="count">
-								<h3>179,456</h3>
+								<h3 id="totalViewer">Data Kurang</h3>
 							</div>
-							<h2>Total Viewer</h2>
+							<h2>Total Impression</h2>
 							<p></p>
 						</div>
 					</div>
@@ -48,7 +47,7 @@
 						<div class="tile-stats">
 							<div class="icon"><i class="fa fa-automobile"></i></div>
 							<div class="count">
-								<h3>179</h3>
+								<h3 id="totalUnit">-</h3>
 							</div>
 							<h2>Total Unit</h2>
 							<p></p>
@@ -58,7 +57,7 @@
 						<div class="tile-stats">
 							<div class="icon"><i class="fa fa-check-square-o"></i></div>
 							<div class="count">
-								<h3>1 Month</h3>
+								<h3>3 Month</h3>
 							</div>
 							<h2>Durasi Campaign</h2>
 							<p></p>
@@ -67,7 +66,6 @@
 					<div class="clearfix"></div>
 				</div>
 				<br>
-
 				<div class="col-md-12 col-sm-12 col-xs-12">
 					<table id="drive" class="table table-striped table-bordered" style="width:100%">
 						<thead>
@@ -80,10 +78,11 @@
 						<tbody id="tableArea">
 						</tbody>
 					</table>
+					<br>
+					<br>
 				</div>
-
 				<div class="col-md-12 col-sm-12 col-xs-12">
-					<table id="drive2" class="table table-striped table-bordered" style="width:100%">
+					<table id="drive2" class="table table-striped table-bordered hidden" style="width:100%;">
 						<thead>
 							<tr>
 								<th></th>
@@ -91,6 +90,7 @@
 								<th>Plat Number</th>
 								<th>Unit</th>
 								<th>Mileage</th>
+								<th>Impression</th>
 								<th>Last Location</th>
 								<th>Status</th>
 								<th>Detail</th>
@@ -103,103 +103,120 @@
 					<br>
 					<br>
 					<div align="right" class="col-md-12 col-sm-12 col-xs-12">
-						<button type="submit" id="locate" class="btn btn-success"></i> Search Driver in Map </button>
-						<button id="test" type="submit" class="btn btn-success"></i> Search Data </button>
+						<button type="button" id="locate" class="hidden btn btn-success">View Drivers in Map </button>
+						<button id="test" type="button" class="btn btn-success">Search Drivers Data</button>
 					</div>
 				</div>
-
-
-			</div> <!-- close x content -->
-
-
-		</div> <!-- closse xpanel -->
-	</div> <!-- close col -->
-</div> <!-- close row -->
-
+			</div>
+		</div>
+	</div>
+</div> `
 <div class="row">
 	<div class="col-md-12 col-sm-12 col-xs-12">
 		<div class="x_panel tile fixed">
-
 			<div class="x_content">
-				<div class="form-group">
-					<label for="province">Province :</label>
-					<select class="form-control" onchange="initMap()" name="province" id="province">
-						<option selected='selected' value="31">DKI Jakarta</option>
-						<option value="36">Banten</option>
-						<option value="32">Jawa Barat</option>
-						<option value="12">Sumatra Utara</option>
-					</select>
-					<div class="clearfix"></div>
-				</div>
 				<div id="googleMap" style="width:100%;height:700px;"></div>
 				<br>
-			</div> <!-- close x content -->
+			</div>
+		</div>
+	</div>
+</div>
 
-
-		</div> <!-- closse xpanel -->
-	</div> <!-- close col -->
-</div> <!-- close row -->
-<br />
-<!-- /page content -->
-
-<!-- Route Modal -->
 <div class="modal fade" id="routeModal" role="dialog">
 	<div class="modal-dialog modal-lg">
 
-		<!-- Route content-->
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal">&times;</button>
 				<h4 class="modal-title">Route</h4>
 			</div>
 			<div class="modal-body">
-				<div id="map" style="width:100%;height:700px;"></div>
+				<div id="googleHeatMap" style="width:100%;height:700px;"></div>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 			</div>
 		</div>
-
 	</div>
 </div>
-
-<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAj7tSdjukVN4virXCXLUnKLJ4UR_gXVG0&libraries=visualization&callback=initialize"
- async defer></script>
+<script
+	src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAj7tSdjukVN4virXCXLUnKLJ4UR_gXVG0&libraries=visualization">
+</script>
+<script src="/static/assets/vendors/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript">
-	var SITE_URL = "<?php echo site_url() ?>";
+	var SITE_URL = "http://marugame.abplusscar.com/";
 	var markers = [];
 	var lastLocationsData = false
 	var map
 	var global_gps_data
 	var selected_data = []
+	lat = -6.11259;
+	lng = 106.7375;
+
+	$("#test").click(function () {
+		if ('#test') {
+			$('#drive2').removeClass("hidden");
+			$('#locate').removeClass("hidden");
+		}
+	});
+	map = new google.maps.Map(document.getElementById('googleMap'), {
+		zoom: 6,
+		center: {
+			lat: lat,
+			lng: lng
+		},
+		gestureHandling: 'greedy',
+		mapTypeId: google.maps.MapTypeId.ROADMAP,
+		styles: [{
+				"featureType": "administrative",
+				"stylers": [{
+					"visibility": "simplified"
+				}]
+			},
+			{
+				"featureType": "administrative",
+				"elementType": "geometry",
+				"stylers": [{
+					"visibility": "off"
+				}]
+			},
+			{
+				"featureType": "administrative.land_parcel",
+				"stylers": [{
+					"visibility": "off"
+				}]
+			},
+			{
+				"featureType": "administrative.neighborhood",
+				"stylers": [{
+					"visibility": "simplified"
+				}]
+			},
+			{
+				"featureType": "road.arterial",
+				"stylers": [{
+					"visibility": "off"
+				}]
+			},
+			{
+				"featureType": "road.highway",
+				"stylers": [{
+					"visibility": "simplified"
+				}]
+			}
+		]
+	});
 
 	function initialize() {
 		initMap();
-		initAutocomplete();
 	}
 
 	function initMap() {
-		var province = document.getElementById('province').value;
 		var lat;
 		var lng;
-		$.ajax({
-			url: SITE_URL + 'assets/provinces.json',
-			method: 'get',
-			dataType: 'json',
-			async: false,
-			cache: false,
-			success: function (result) {
-				for (i = 0; i < result.length; i++) {
-					if (result[i]['id'] == province) {
-						lat = parseFloat(result[i]['latitude']);
-						lng = parseFloat(result[i]['longitude']);
-						break;
-					}
-				}
-			},
 
-		});
-
+		lat = -6.11259
+		lng = 106.7375
 		map = new google.maps.Map(document.getElementById('googleMap'), {
 			zoom: 7,
 			center: {
@@ -214,7 +231,7 @@
 
 	function getArea() {
 		$.ajax({
-			url: SITE_URL + 'assets/datanew.json',
+			url: SITE_URL + 'gps/lastlocations/',
 			method: 'get',
 			dataType: 'json',
 			async: false,
@@ -225,12 +242,21 @@
 				global_gps_data = data
 				lastLocationsData = data
 				var totalMileage = 0
+				var totalViewer = 0
 				for (var i = 0; i < data.length; i++) {
 					var beach = data[i];
 					totalMileage += parseFloat(beach[5])
+					totalViewer += parseFloat(beach[9])
 				}
+				var total_mileage = totalMileage;
+				var total_viewer = totalViewer
+
+				var hasil_total_mileage = total_mileage.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")
+				var hasil_total_viewer = total_viewer.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")
+
 				$('#totalUnit').text(data.length)
-				$('#totalMileage').text(totalMileage + ' km')
+				$('#totalViewer').text(hasil_total_viewer)
+				$('#totalMileage').text(hasil_total_mileage + ' km')
 				var table_cities = ''
 				for (var key in cities) {
 					table_cities += "<tr><td></td><td>" +
@@ -250,7 +276,7 @@
 			renderMarkers(lastLocationsData)
 		} else {
 			$.ajax({
-				url: SITE_URL + 'assets/datanew.json',
+				url: SITE_URL + 'gps/lastlocations/',
 				method: 'get',
 				dataType: 'json',
 				async: false,
@@ -277,6 +303,7 @@
 				"<td>" + beach[0] + "</td>" +
 				"<td>" + "mobil" + "</td>" +
 				"<td>" + beach[5] + "</td>" +
+				"<td>" + beach[9] + "</td>" +
 				"<td>" + beach[7] + "</td>" +
 				"<td>" +
 				"<button disabled='disabled' type='button'" +
@@ -321,7 +348,9 @@
 				},
 				map: map,
 				icon: "<?php echo base_url() ?>assets/build/images/mobil.png",
-				info: beach[0] + ' ' + beach[4],
+				info: beach[0] + ' ' +
+					' Mileage: ' + beach[5] +
+					' Impression: ' + beach[9],
 			});
 
 			markers.push(marker)
@@ -341,86 +370,57 @@
 		}
 		markers = [];
 	};
-	getArea(map);
-	//close function initmap()
 
-	function initAutocomplete() {
-		var detailPeta = {
-			center: new google.maps.LatLng(-6.21462, 106.84513),
-			zoom: 12,
+	getArea(map);
+</script>
+<script type="text/javascript">
+	var coordinates = []
+	var path
+	var SITE_URL = "http://marugame.abplusscar.com/";
+
+	function initHeatMap(license_no, lati, lngt) {
+		var propertiPeta = {
+			center: new google.maps.LatLng(lati, lngt),
+			zoom: 10,
+			gestureHandling: 'greedy',
 			mapTypeId: google.maps.MapTypeId.ROADMAP
 		};
 
-		var peta2 = new google.maps.Map(document.getElementById("map"), detailPeta);
-
-		var flightPlanCoordinates = [];
-
+		var peta = new google.maps.Map(document.getElementById("googleHeatMap"), propertiPeta);
+		var data_location
 		$.ajax({
-			url: SITE_URL + 'assets/jemboet.json',
+			url: SITE_URL + 'gps/?license_no=' + license_no,
 			method: 'get',
 			dataType: 'json',
 			async: false,
+			cache: false,
 			success: function (result) {
-				for (i = 0; i < result['results'][0]['data'].length; i++) {
-					latitude = parseFloat(result['results'][0]['data'][i]['lat']);
-					longitude = parseFloat(result['results'][0]['data'][i]['lng']);
-					flightPlanCoordinates.push(new google.maps.LatLng(latitude, longitude))
+				console.log(result)
+				var dummy = []
+				var data_location = []
+				var data = result['results'][0]['data']
+				for (var i = 0; i < data.length; i++) {
+					dummy.push(new google.maps.LatLng(
+						parseFloat(data[i]['lat']),
+						parseFloat(data[i]['lng'])));
 				}
 
-				var heatmap = new google.maps.visualization.HeatmapLayer({
-					data: flightPlanCoordinates,
-					map: peta2,
+				heatmap = new google.maps.visualization.HeatmapLayer({
+					data: dummy,
+					map: peta,
+					radius: 60,
 					opacity: 0.75,
 				});
 
-				start_latitude = parseFloat(result['results'][0]['data'][0]['lat']);
-				start_longitude = parseFloat(result['results'][0]['data'][0]['lng']);
-
-				end_latitude = parseFloat(result['results'][0]['data'][result['results'][0]['data'].length - 100]['lat']);
-				end_longitude = parseFloat(result['results'][0]['data'][result['results'][0]['data'].length - 100]['lng']);
-
-				//flightPath.setMap(peta);
-
-				function setMarkersdetail(map2) {
-					var marker = new google.maps.Marker({
-						position: {
-							lat: start_latitude,
-							lng: start_longitude
-						},
-						map: map2,
-						icon: "<?php echo base_url() ?>assets/build/images/mobil.png",
-					});
-
-				}
-				setMarkersdetail(peta2);
-
-				function setMarkers2detail(map2) {
-					var marker = new google.maps.Marker({
-						position: {
-							lat: end_latitude,
-							lng: end_longitude
-						},
-						map: map2,
-						icon: "<?php echo base_url() ?>assets/build/images/mobil.png",
-					});
-
-				}
-				setMarkers2detail(peta2);
 			}
-
 		});
-
 	}
-
-	// event jendela di-load
-	// google.maps.event.addDomListener(window, 'load', initAutocomplete);
-</script>
-<script type="text/javascript">
-	var SITE_URL = "<?php echo site_url() ?>";
-	var json_url = SITE_URL + 'assets/datanew.json';
+	var json_url = SITE_URL + 'gps/lastlocations/';
+	var hasil_row;
 
 	function prepareArea() {
-		var hasil_row = $('#drive').DataTable({
+		console.log("preparing area..")
+		hasil_row = $('#drive').DataTable({
 			"searching": true,
 			"dom": 'Bfrtip',
 			buttons: [
@@ -454,28 +454,27 @@
 		$('#drive2 tbody').on('click', 'tr', function () {
 			$(this).toggleClass('selected');
 		});
-
-		$('#test').click(function () {
-			//deleteMarkers()
-			selected_data = []
-			var driverData = ''
-			$('#tableDriver').html(driverData)
-			data = hasil_row.rows('.selected').data();
-			for (var i = data.length - 1; i >= 0; i--) {
-				$.each(global_gps_data, function (index, item) {
-					if (item[7].toLowerCase() == data[i][1].toLowerCase()) {
-						selected_data.push(item)
-					}
-				})
-				//}
-			}
-			$('#drive2').DataTable().destroy()
-			renderMarkers(selected_data);
-			prepareTable();
-		});
 	}
 
 
+
+	$('#test').click(function () {
+		selected_data = []
+		var driverData = ''
+		$('#tableDriver').html(driverData)
+		data = hasil_row.rows('.selected').data();
+		for (var i = data.length - 1; i >= 0; i--) {
+			$.each(global_gps_data, function (index, item) {
+				if (item[7].toLowerCase() == data[i][1].toLowerCase()) {
+					selected_data.push(item)
+					console.log(item)
+				}
+			})
+		}
+		$('#drive2').DataTable().destroy()
+		renderMarkers(selected_data);
+		prepareTable();
+	});
 
 	function prepareTable() {
 		tableDriver = $('#drive2').DataTable({
@@ -504,32 +503,6 @@
 				[1, 'asc']
 			]
 		});
-
-		$('#detail').DataTable({
-			"searching": false,
-			"columnDefs": [{
-				"orderable": true,
-				"scrollX": true
-			}],
-		});
-
-		$('#detail').DataTable({
-			"searching": false,
-			"columnDefs": [{
-				"orderable": true,
-				"scrollX": true
-			}],
-		});
-
-		$('#report').DataTable({
-			"searching": false,
-			"fixedHeader": false,
-			"columnDefs": [{
-				"orderable": true,
-				"scrollX": true
-			}],
-		});
-
 	}
 
 	function getSelectedDriver() {
@@ -546,11 +519,17 @@
 					selected_data.push(item)
 				}
 			})
+			//}
 		}
 
 		console.log(selected_data[0])
 		map.setCenter(new google.maps.LatLng(parseFloat(selected_data[0][1]), parseFloat(selected_data[0][2])));
+
 		deleteMarkers()
 		peta()
 	})
 </script>
+<script
+	src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAj7tSdjukVN4virXCXLUnKLJ4UR_gXVG0&libraries=visualization&callback=initialize"
+	async defer></script>
+</div>
