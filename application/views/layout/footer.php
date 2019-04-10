@@ -60,19 +60,13 @@
     <!-- table role management -->
     <script type="text/javascript">
         $(document).ready(function() {
-            // setTimeout(hideLoader(),13000);
-            // setTimeout(hideLoader(), 3000);
-            // hideLoader();
-            //$(".preloader").fadeOut();
             setTimeout(function(){
                 $('body').addClass('loaded');
                 $(".preloader").fadeIn();
-                // $(".preloader").fadeOut();
             }, 10);
 
             getArea();
             prepareArea();
-            // $(".preloader").fadeOut();
                 var t = $('#myTable').DataTable( {
                 "searching" : false,
                 "columnDefs": [ {

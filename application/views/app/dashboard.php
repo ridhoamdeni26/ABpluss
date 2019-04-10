@@ -348,8 +348,8 @@
 				},
 				map: map,
 				icon: "<?php echo base_url() ?>assets/build/images/mobil.png",
-				info: beach[0] + ' ' +
-					' Mileage: ' + beach[5] +
+				info: '<h5>Info Kendaraan</h5>' + 'No Plat :' + ' ' + beach[0] + ' ' + '<br>' +
+					' Mileage: ' + beach[5] + '<br>' +
 					' Impression: ' + beach[9],
 			});
 
