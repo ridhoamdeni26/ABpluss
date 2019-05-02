@@ -77,6 +77,7 @@
               $(".preloader").fadeIn();
             }, 10);
 
+            // billboard();
             getDailyReport();
             getArea();
             prepareArea();
