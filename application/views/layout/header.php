@@ -135,5 +135,10 @@
             width : 150px;
             height : 150px;
         }
+        #chart-js {
+            min-width: 310px;
+            height: 400px;
+            margin-bottom: 50px;
+        }
     </style>
   </head>

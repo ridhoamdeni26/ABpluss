@@ -67,6 +67,12 @@
 				</div>
 				<br>
 				<div class="col-md-12 col-sm-12 col-xs-12">
+					<div id="chart-js">
+						<div class="clearfix"></div>
+					</div>
+				</div>
+				<br>
+				<div class="col-md-12 col-sm-12 col-xs-12">
 					<table id="drive" class="table table-striped table-bordered" style="width:100%">
 						<thead>
 							<tr>
@@ -139,12 +145,17 @@
 		</div>
 	</div>
 </div>
+<script src="<?php echo site_url()?>assets/vendors/jquery/dist/jquery.min.js"></script>
 <script
-	src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAj7tSdjukVN4virXCXLUnKLJ4UR_gXVG0&libraries=visualization">
+	src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAj7tSdjukVN4virXCXLUnKLJ4UR_gXVG0&libraries=visualization&callback=initialize">
 </script>
-<script src="/static/assets/vendors/jquery/dist/jquery.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+
 <script type="text/javascript">
 	var SITE_URL = "http://marugame.abplusscar.com/";
+	var SITE_LOCAL = "<?php echo site_url()?>";
 	var markers = [];
 	var lastLocationsData = false
 	var map
@@ -153,12 +164,29 @@
 	lat = -6.11259;
 	lng = 106.7375;
 
+	function getDailyReport() {
+		var reportData = "";
+		$.ajax({
+			url: SITE_URL + 'gps/dailyreport/',
+			method: 'get',
+			dataType: 'json',
+			async: false,
+			cache: false,
+			success: function (result) {
+				var data = result['results'][0]['datelist']
+				visitorData(data)
+			}
+		});
+	}
+	//button hidden before click
 	$("#test").click(function () {
 		if ('#test') {
 			$('#drive2').removeClass("hidden");
 			$('#locate').removeClass("hidden");
 		}
 	});
+
+	//set google map view
 	map = new google.maps.Map(document.getElementById('googleMap'), {
 		zoom: 6,
 		center: {
@@ -207,10 +235,12 @@
 		]
 	});
 
+	//funtion for get maps API
 	function initialize() {
 		initMap();
 	}
 
+	//for google maps indonesia
 	function initMap() {
 		var lat;
 		var lng;
@@ -229,6 +259,7 @@
 
 	}
 
+	//get area tabledata after click search driver
 	function getArea() {
 		$.ajax({
 			url: SITE_URL + 'gps/lastlocations/',
@@ -271,6 +302,7 @@
 		});
 	}
 
+	//get marker after click
 	function placeMarkers(map) {
 		if (lastLocationsData != false) {
 			renderMarkers(lastLocationsData)
@@ -339,7 +371,7 @@
 		data = selected_data
 		for (var i = 0; i < data.length; i++) {
 			var beach = data[i];
-			console.log(beach)
+			// console.log(beach)
 
 			var marker = new google.maps.Marker({
 				position: {
@@ -361,7 +393,6 @@
 			});
 		}
 	}
-
 
 	function deleteMarkers() {
 		//Loop through all the markers and remove
@@ -395,7 +426,7 @@
 			async: false,
 			cache: false,
 			success: function (result) {
-				console.log(result)
+				// console.log(result)
 				var dummy = []
 				var data_location = []
 				var data = result['results'][0]['data']
@@ -419,7 +450,6 @@
 	var hasil_row;
 
 	function prepareArea() {
-		console.log("preparing area..")
 		hasil_row = $('#drive').DataTable({
 			"searching": true,
 			"dom": 'Bfrtip',
@@ -457,7 +487,6 @@
 	}
 
 
-
 	$('#test').click(function () {
 		selected_data = []
 		var driverData = ''
@@ -467,7 +496,6 @@
 			$.each(global_gps_data, function (index, item) {
 				if (item[7].toLowerCase() == data[i][1].toLowerCase()) {
 					selected_data.push(item)
-					console.log(item)
 				}
 			})
 		}
@@ -522,14 +550,46 @@
 			//}
 		}
 
-		console.log(selected_data[0])
 		map.setCenter(new google.maps.LatLng(parseFloat(selected_data[0][1]), parseFloat(selected_data[0][2])));
 
 		deleteMarkers()
 		peta()
 	})
 </script>
-<script
-	src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAj7tSdjukVN4virXCXLUnKLJ4UR_gXVG0&libraries=visualization&callback=initialize"
-	async defer></script>
+<script>
+	function visitorData(data) {
+		console.log(data)
+		var tanggal = []
+		var viewer = []
+		for (var key in data) {
+			viewer.push(data[key]['viewer'])
+			tanggal.push(key)
+		}
+		Highcharts.chart('chart-js', {
+			title: {
+				text: 'Total Impression'
+			},
+
+			subtitle: {
+				text: 'Plain'
+			},
+
+			xAxis: {
+				categories: tanggal,
+			},
+
+			series: [{
+				name: 'Impression',
+				type: 'column',
+				color: '#89c342',
+				data: viewer,
+				showInLegend: false,
+				style: {
+					fontSize: '13px',
+					fontFamily: 'Verdana, sans-serif'
+				},
+			}],
+		});
+	}
+</script>
 </div>

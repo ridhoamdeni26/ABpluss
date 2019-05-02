@@ -32,106 +32,7 @@
                                 <th>Detail Record</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <th>1</th>
-                                <th>B1234MUN</th>
-                                <th>14 January 2019</th>
-                                <th>
-                                    <button type="button" class="btn btn-info" data-toggle='modal'
-                                        data-target='#recordModal'>Detail</button>
-                                </th>
-                            </tr>
-                            <tr>
-                                <th>2</th>
-                                <th>B1234MUN</th>
-                                <th>14 January 2019</th>
-                                <th>
-                                    <button type="button" class="btn btn-info" data-toggle='modal'
-                                        data-target='#recordModal'>Detail</button>
-                                </th>
-                            </tr>
-                            <tr>
-                                <th>3</th>
-                                <th>B1234MUN</th>
-                                <th>14 January 2019</th>
-                                <th>
-                                    <button type="button" class="btn btn-info" data-toggle='modal'
-                                        data-target='#recordModal'>Detail</button>
-                                </th>
-                            </tr>
-                            <tr>
-                                <th>4</th>
-                                <th>B1234MUN</th>
-                                <th>14 January 2019</th>
-                                <th>
-                                    <button type="button" class="btn btn-info" data-toggle='modal'
-                                        data-target='#recordModal'>Detail</button>
-                                </th>
-                            </tr>
-                            <tr>
-                                <th>5</th>
-                                <th>B1234MUN</th>
-                                <th>14 January 2019</th>
-                                <th>
-                                    <button type="button" class="btn btn-info" data-toggle='modal'
-                                        data-target='#recordModal'>Detail</button>
-                                </th>
-                            </tr>
-                            <tr>
-                                <th>6</th>
-                                <th>B1234MUN</th>
-                                <th>14 January 2019</th>
-                                <th>
-                                    <button type="button" class="btn btn-info" data-toggle='modal'
-                                        data-target='#recordModal'>Detail</button>
-                                </th>
-                            </tr>
-                            <tr>
-                                <th>7</th>
-                                <th>B1234MUN</th>
-                                <th>14 January 2019</th>
-                                <th>
-                                    <button type="button" class="btn btn-info" data-toggle='modal'
-                                        data-target='#recordModal'>Detail</button>
-                                </th>
-                            </tr>
-                            <tr>
-                                <th>8</th>
-                                <th>B1234MUN</th>
-                                <th>14 January 2019</th>
-                                <th>
-                                    <button type="button" class="btn btn-info" data-toggle='modal'
-                                        data-target='#recordModal'>Detail</button>
-                                </th>
-                            </tr>
-                            <tr>
-                                <th>9</th>
-                                <th>B1234MUN</th>
-                                <th>14 January 2019</th>
-                                <th>
-                                    <button type="button" class="btn btn-info" data-toggle='modal'
-                                        data-target='#recordModal'>Detail</button>
-                                </th>
-                            </tr>
-                            <tr>
-                                <th>10</th>
-                                <th>B1234MUN</th>
-                                <th>14 January 2019</th>
-                                <th>
-                                    <button type="button" class="btn btn-info" data-toggle='modal'
-                                        data-target='#recordModal'>Detail</button>
-                                </th>
-                            </tr>
-                            <tr>
-                                <th>11</th>
-                                <th>B1234MUN</th>
-                                <th>14 January 2019</th>
-                                <th>
-                                    <button type="button" class="btn btn-info" data-toggle='modal'
-                                        data-target='#recordModal'>Detail</button>
-                                </th>
-                            </tr>
+                        <tbody id="tableLicenses">
                         </tbody>
                     </table>
                     <br>
@@ -159,33 +60,139 @@
         </div>
     </div>
 </div>
+<script src="<?php echo base_url() ?>assets/vendors/jquery/dist/jquery.min.js"></script>
 <script>
+    var SITE_URL = "http://marugame.abplusscar.com/";
+    var licenses;
     $(document).ready(function () {
+        prepareTable()
+        getLicenses()
+        initMap()
+    });
+
+    function prepareTable() {
         $('#record').DataTable({
-            "scrollX": true,
             "searching": true,
         });
-    });
+    }
+
+    function getLicenses() {
+        $.ajax({
+            url: SITE_URL + 'gps/record/all/',
+            method: 'get',
+            dataType: 'json',
+            async: false,
+            cache: false,
+            success: function (result) {
+                var data = result['results'][0]['data']
+                var table_licenses = ''
+                for (var i = 0; i < data.length; i++) {
+                    var beach = data[i];
+                    // console.log(beach['created_date'])
+                    // console.log(beach['license_no'])
+                    table_licenses += "<tr><td>" + (i + 1) +
+                        "</td><td>" +
+                        beach['license_no'] +
+                        "</td>"
+                    table_licenses += "<td>" +
+                        beach['created_date'] +
+                        "</td>"
+                    table_licenses += "<td>" + "<button type='button'" +
+                        "class='btn btn-info' data-toggle='modal'" +
+                        "onclick='getRecord(" + '"' + beach['license_no'] + '"' + ")'" +
+                        "data-target='#recordModal'>Detail</button>" +
+                        "</td></tr>"
+                }
+                $('#record').DataTable().destroy()
+                $('#tableLicenses').html(table_licenses);
+                prepareTable()
+            }
+        });
+    }
+    var allRecordData;
+    var mapCenter = {
+        lat: -6.21462,
+        lng: 106.84513
+    };
+    var marker;
+    var map;
+    var currentIndex = 0;
+    var iterateTimeout;
+
+    function getRecord(license_no) {
+        $.ajax({
+            url: SITE_URL + 'gps/record/' + license_no + '/',
+            method: 'get',
+            dataType: 'json',
+            async: false,
+            cache: false,
+            success: function (result) {
+                var data = result['results'][0]['data']
+                var table_licenses = ''
+                for (var i = 0; i < data.length; i++) {
+                    var beach = data[i];
+                    if (i == 0) {
+                        mapCenter = {
+                            lat: parseFloat(beach['lat']),
+                            lng: parseFloat(beach['lng'])
+                        };
+                    }
+                }
+                clearTimeout(iterateTimeout)
+                deleteMarkers()
+                allRecordData = data
+                map.setCenter(mapCenter)
+                placeMarker()
+                currentIndex += 1;
+                iterateTimeout = setTimeout(function () {
+                    iterateRecord()
+                }, 6000);
+            }
+        });
+    }
 </script>
 <script>
-    function initMap() {
-        // The location of Uluru
-        var uluru = {
-            lat: -6.21462,
-            lng: 106.84513
+    function iterateRecord() {
+        var beach = allRecordData[currentIndex]
+        mapCenter = {
+            lat: parseFloat(beach['lat']),
+            lng: parseFloat(beach['lng'])
         };
+        // console.log(mapCenter)
+        deleteMarkers()
+        map.setCenter(mapCenter)
+        placeMarker()
+        currentIndex += 1;
+        if (currentIndex < allRecordData.length) {
+            iterateTimeout = setTimeout(function () {
+                iterateRecord()
+            }, 300);
+        }
+    }
+
+    function deleteMarkers() {
+        marker.setMap(null);
+    };
+
+    function placeMarker() {
+        marker = new google.maps.Marker({
+            position: mapCenter,
+            map: map,
+            icon: "../assets/build/images/mobil.png",
+        });
+    }
+
+    function initMap() {
         // The map, centered at Uluru
-        var map = new google.maps.Map(
+        map = new google.maps.Map(
             document.getElementById('googleHeatMap'), {
-                zoom: 13,
-                center: uluru
+                zoom: 20,
+                gestureHandling: 'greedy',
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                center: mapCenter
             });
         // The marker, positioned at Uluru
-        var marker = new google.maps.Marker({
-            position: uluru,
-            map: map,
-            icon: "<?php echo base_url() ?>assets/build/images/mobil.png",
-        });
+        placeMarker()
     }
 </script>
 <script async defer

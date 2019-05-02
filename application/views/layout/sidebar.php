@@ -7,6 +7,7 @@
       <li><a href="<?php echo site_url() ?>ABAnalytic/index"><i class="fa fa-money"></i> AB Analytic </a></li>
       <li><a href="<?php echo site_url() ?>Record/index"><i class="fa fa-video-camera"></i> Record </a></li>
       <li><a href="<?php echo site_url() ?>Advertisement/index"><i class="fa fa-money"></i> Advertisement </a></li>
+      <li><a href="<?php echo site_url() ?>Mapbrand/index"><i class="fa fa-map-marker"></i> Map Brand </a></li>
       <li><a><i class="fa fa-paypal"></i> Payment <span class="fa fa-chevron-down"></span></a>
         <ul class="nav child_menu">
           <li><a href="<?php echo site_url() ?>Payment/index">Payment List</a></li>
