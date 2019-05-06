@@ -72,36 +72,14 @@
         <!-- table role management -->
         <script type="text/javascript">
           $(document).ready(function () {
-            setTimeout(function () {
-              $('body').addClass('loaded');
-              $(".preloader").fadeIn();
-            }, 10);
+            // setTimeout(function () {
+            //   $('body').addClass('loaded');
+            //   $(".preloader").fadeIn();
+            // }, 10);
 
-            // billboard();
-            getDailyReport();
+            // getDailyReport();
             getArea();
             prepareArea();
-            var t = $('#myTable').DataTable({
-              "searching": false,
-              "columnDefs": [{
-                "searchable": false,
-                "orderable": true,
-                "targets": 0,
-                "scrollX": true
-              }],
-              "order": [
-                [1, 'asc']
-              ]
-            });
-
-            t.on('order.dt search.dt', function () {
-              t.column(0, {
-                search: 'applied',
-                order: 'applied'
-              }).nodes().each(function (cell, i) {
-                cell.innerHTML = i + 1;
-              });
-            }).draw();
           });
         </script>
 

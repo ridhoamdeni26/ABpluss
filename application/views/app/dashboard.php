@@ -154,6 +154,9 @@
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
 
 <script type="text/javascript">
+$(document).ready(function () {
+	getDailyReport();
+});
 	var SITE_URL = "http://marugame.abplusscar.com/";
 	var SITE_LOCAL = "<?php echo site_url()?>";
 	var markers = [];
