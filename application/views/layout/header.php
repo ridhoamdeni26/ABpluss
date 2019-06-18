@@ -45,6 +45,9 @@
     <link href="<?php echo base_url() ?>assets/pagination/pagination.css" rel="stylesheet">
     <!-- ABAnalytic -->
     <link href="<?php echo base_url() ?>assets/analytic/analytic.css" rel="stylesheet">
+    <!-- gallery upload -->
+    <link href="<?php echo base_url() ?>assets/build/css/upload.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <style type="text/css">
 /* Search 4 - appear looking glass */

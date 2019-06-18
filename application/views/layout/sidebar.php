@@ -5,6 +5,7 @@
       <li><a href="<?php echo site_url() ?>Welcome/index"><i class="fa fa-home"></i> Dashboard </a></li>
       <li><a href="<?php echo site_url() ?>Report/index"><i class="fa fa-book"></i> Report </a></li>
       <li><a href="<?php echo site_url() ?>ABAnalytic/index"><i class="fa fa-money"></i> AB Analytic </a></li>
+      <li><a href="<?php echo site_url() ?>Upload/index"><i class="fa fa-building"></i> Gallery Of Brand </a></li>
       <li><a href="<?php echo site_url() ?>Record/index"><i class="fa fa-video-camera"></i> Record </a></li>
       <li><a href="<?php echo site_url() ?>Advertisement/index"><i class="fa fa-money"></i> Advertisement </a></li>
       <li><a href="<?php echo site_url() ?>Mapbrand/index"><i class="fa fa-map-marker"></i> Map Brand </a></li>

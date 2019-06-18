@@ -43,7 +43,6 @@
         lat: -6.21462,
         lng: 106.84513
     };
-    var currentIndex = 0;
     var iterateTimeout;
     var marker1;
     var marker2;
@@ -70,11 +69,14 @@
         krl_grog_pes = response['grog-pes'];
         krl_duri_grog = response['duri-grog'];
         krl_mang_sud = response['mang-sud'];
-    }
+    }   
     var marker1 = "";
     var marker2 = "";
     var marker3 = "";
     var backward = false;
+    var currentIndex = 0;
+    var currentIndex1 = 0;
+    var currentIndex2 = 0;
 
     function placeMarker() {
         if (currentIndex < krl_mang_sud.length) {
@@ -112,11 +114,12 @@
     }
 
     function placeMarker2() {
-        if (currentIndex < krl_grog_pes.length) {
+        if (currentIndex1 < krl_grog_pes.length) {
             mapCenter = {
-                lat: parseFloat(krl_grog_pes[currentIndex][0]),
-                lng: parseFloat(krl_grog_pes[currentIndex][1])
+                lat: parseFloat(krl_grog_pes[currentIndex1][0]),
+                lng: parseFloat(krl_grog_pes[currentIndex1][1])
             };
+            console.log(krl_grog_pes[currentIndex1])
             if (marker2 == "") {
                 marker2 = new google.maps.Marker({
                     position: mapCenter,
@@ -127,9 +130,9 @@
                 marker2.setPosition(mapCenter);
             }
             if (backward) {
-                currentIndex -= 1;
+                currentIndex1 -= 1;
             } else {
-                currentIndex += 1;
+                currentIndex1 += 1;
             }
             iterateTimeout = setTimeout(function () {
                 placeMarker2()
@@ -139,7 +142,7 @@
                 backward = false;
             } else {
                 backward = true;
-                currentIndex -= 1;
+                currentIndex1 -= 1;
             }
             backward = true;
             placeMarker2()
@@ -147,10 +150,10 @@
     }
 
     function placeMarker3() {
-        if (currentIndex < krl_duri_grog.length) {
+        if (currentIndex2 < krl_duri_grog.length) {
             mapCenter = {
-                lat: krl_duri_grog[currentIndex][0],
-                lng: krl_duri_grog[currentIndex][1]
+                lat: krl_duri_grog[currentIndex2][0],
+                lng: krl_duri_grog[currentIndex2][1]
             };
             if (marker3 == "") {
                 marker3 = new google.maps.Marker({
@@ -162,9 +165,9 @@
                 marker3.setPosition(mapCenter);
             }
             if (backward) {
-                currentIndex -= 1;
+                currentIndex2 -= 1;
             } else {
-                currentIndex += 1;
+                currentIndex2 += 1;
             }
             iterateTimeout = setTimeout(function () {
                 placeMarker3()
@@ -172,9 +175,10 @@
         } else {
             if (backward) {
                 backward = false;
+                currentIndex2 -= 0;
             } else {
                 backward = true;
-                currentIndex -= 1;
+                currentIndex2 -= 1;
             }
             backward = true;
             placeMarker3()
