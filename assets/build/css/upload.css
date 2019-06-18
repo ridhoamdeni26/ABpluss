@@ -44,7 +44,7 @@
 
 .inner-box .image img {
     position: relative;
-    width: auto;
+    width: 200px;
     height: auto;
     display: block;
     margin: auto;
@@ -124,7 +124,7 @@
 .inner-box .image .overlay-box .overlay-inner {
     position: absolute;
     left: 0px;
-    bottom: 30px;
+    bottom: 0px;
     z-index: 1;
     padding: 10px 40px;
 }

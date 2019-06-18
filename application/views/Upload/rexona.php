@@ -33,6 +33,7 @@
                 <section class="portfolio ">
                     <div class="container">
                         <button type="button" class="btn btn-info btn-lg">Download All Image</button>
+                        <div class="clearfix"></div>
                         <div class="overflow-image">
                             <div class="row shuffle-wrapper portfolio-gallery">
 
@@ -190,21 +191,4 @@
             autoStart: true
         }
     });
-</script>
-<script>
-    var images = document.getElementsByTagName('img');
-    var srcList = [];
-    var i = 0;
-
-    setInterval(function () {
-        if (images.length > i) {
-            srcList.push(images[i].src);
-            var link = document.createElement("a");
-            link.id = i;
-            link.download = images[i].src;
-            link.href = images[i].src;
-            link.click();
-            i++;
-        }
-    }, 1500);
 </script>
