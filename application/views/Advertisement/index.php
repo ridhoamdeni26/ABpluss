@@ -159,7 +159,7 @@
             <div class="col-md-3 col-sm-4 col-xs-12">
               <div class="radio">
                 <label>
-                  <input type="radio" value="3" id="duration_6" name="duration" onclick="showOption(6);"> 6 Month
+                  <input type="radio" value="6" id="duration_6" name="duration" onclick="showOption(6);"> 6 Month
                 </label>
               </div>
             </div>
@@ -168,14 +168,14 @@
             <div class="col-md-3 col-sm-4 col-xs-12">
               <div class="radio">
                 <label>
-                  <input type="radio" value="3" id="duration_9" name="duration" onclick="showOption(9);"> 9 Month
+                  <input type="radio" value="9" id="duration_9" name="duration" onclick="showOption(9);"> 9 Month
                 </label>
               </div>
             </div>
             <div class="col-md-3 col-sm-4 col-xs-12">
               <div class="radio">
                 <label>
-                  <input type="radio" value="3" id="duration_12" name="duration" onclick="showOption(12);"> 12 Month
+                  <input type="radio" value="12" id="duration_12" name="duration" onclick="showOption(12);"> 12 Month
                 </label>
               </div>
             </div>
@@ -362,11 +362,11 @@
     console.log(el)
     if (el == "motor") {
       $("#type_space").addClass("hidden")
-      $("#image_space").attr('src', '<?php echo base_url() ?>assets/build/images/full_half_body.jpg');
+      $("#image_space").attr('src', '<?php echo base_url() ?>assets/build/images/sample_motor.jpg');
     }
     if (el == "mobil") {
       $("#type_space").removeClass("hidden")
-      // $("#image_space").attr('src', '<?php echo base_url() ?>assets/build/images/full_body.jpg');
+      $("#image_space").attr('src', '<?php echo base_url() ?>assets/build/images/full_body.jpg');
     }
   }
 </script>

@@ -60,7 +60,7 @@
                                             class="gallery_image"></a>
                                     <div class="clearfix"></div>
                                 </div>
-
+                                <div class="clearfix"></div>
                             </div>
 
                             <div class="row shuffle-wrapper portfolio-gallery">
@@ -87,6 +87,7 @@
                                             class="gallery_image"></a>
                                     <div class="clearfix"></div>
                                 </div>
+                                <div class="clearfix"></div>
                             </div>
 
                             <div class="row shuffle-wrapper portfolio-gallery">
@@ -113,6 +114,7 @@
                                             class="gallery_image"></a>
                                     <div class="clearfix"></div>
                                 </div>
+                                <div class="clearfix"></div>
                             </div>
 
                             <div class="row shuffle-wrapper portfolio-gallery">
@@ -140,6 +142,7 @@
                                             class="gallery_image"></a>
                                     <div class="clearfix"></div>
                                 </div>
+                                <div class="clearfix"></div>
                             </div>
 
                             <div class="row shuffle-wrapper portfolio-gallery">
@@ -166,6 +169,7 @@
                                             class="gallery_image"></a>
                                     <div class="clearfix"></div>
                                 </div>
+                                <div class="clearfix"></div>
                             </div>
 
                         </div>
@@ -186,9 +190,6 @@
             'fullScreen',
             'close',
             'download'
-        ],
-        thumbs: {
-            autoStart: true
-        }
+        ]
     });
 </script>

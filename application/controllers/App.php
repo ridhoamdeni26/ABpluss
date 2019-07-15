@@ -36,5 +36,11 @@ class App extends CI_Controller {
 	
 	}
 
+	public function test()
+	{
+		$data['contents'] = 'test/test';
+		$this->load->view('layout/index',$data);
+	}
+
 
 } //penutup controller

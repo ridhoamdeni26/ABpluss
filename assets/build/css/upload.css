@@ -192,3 +192,15 @@
 .info a {
     margin-right: 10px;
 }
+
+.campaign_icon_box {
+    padding: 50px;
+    border: 1px solid #ddd;
+    border-radius: 14px;
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}

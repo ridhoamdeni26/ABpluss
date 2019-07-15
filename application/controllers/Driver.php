@@ -15,7 +15,7 @@ class Driver extends CI_Controller {
 	public function index()
 	{
 			//$data['result'] = $this->userdb->getDataUser();
-			$data['contents'] = 'Registration/Driver/add_driver';
+			$data['contents'] = 'Registration/Driver/index';
 			$this->load->view('layout/index',$data);
 	}
 

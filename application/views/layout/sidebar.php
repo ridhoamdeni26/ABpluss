@@ -23,7 +23,15 @@
       </li>
       <li><a href="#"><i class="fa fa-envelope-o"></i> Notification </a></li>
       <li><a href="#"><i class="fa fa-newspaper-o"></i> News </a></li>
-      <li><a href="<?php echo site_url() ?>Masterdata/index"><i class="fa fa-book"></i> Master Data </a></li>
+      <!-- <li><a href="<?php echo site_url() ?>Masterdata/index"><i class="fa fa-book"></i> Master Data </a></li> -->
+      <li><a><i class="fa fa-book"></i> Master Data <span class="fa fa-chevron-down"></span></a>
+        <ul class="nav child_menu">
+          <li><a href="<?php echo site_url() ?>Vehicle/bank_account">Bank</a></li>
+          <li><a href="<?php echo site_url() ?>Vehicle/index">Vehicle</a></li>
+          <li><a href="#">Region</a></li>
+          <li><a href="#">Wilayah</a></li>
+        </ul>
+      </li>
       <li><a><i class="fa fa-edit"></i> Registration <span class="fa fa-chevron-down"></span></a>
         <ul class="nav child_menu">
           <li><a href="#">Agent</a></li>

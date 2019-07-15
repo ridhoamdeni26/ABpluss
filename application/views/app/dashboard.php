@@ -29,7 +29,7 @@
 							<div class="count">
 								<h3 id="totalMileage">-</h3>
 							</div>
-							<h2> Total Jarak Tempuh </h2>
+							<h2>Total Jarak Tempuh</h2>
 							<p></p>
 						</div>
 					</div>
@@ -37,7 +37,7 @@
 						<div class="tile-stats">
 							<div class="icon"><i class="fa fa-eye"></i></div>
 							<div class="count">
-								<h3 id="totalViewer">Data Kurang</h3>
+								<h3 id="totalViewer">-</h3>
 							</div>
 							<h2>Total Impression</h2>
 							<p></p>
@@ -154,10 +154,10 @@
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
 
 <script type="text/javascript">
-$(document).ready(function () {
-	getDailyReport();
-});
-	var SITE_URL = "http://marugame.abplusscar.com/";
+	$(document).ready(function () {
+		getDailyReport();
+	});
+	var SITE_URL = "http://dbs2.abplusscar.com/";
 	var SITE_LOCAL = "<?php echo site_url()?>";
 	var markers = [];
 	var lastLocationsData = false
@@ -304,7 +304,6 @@ $(document).ready(function () {
 			}
 		});
 	}
-
 	//get marker after click
 	function placeMarkers(map) {
 		if (lastLocationsData != false) {
@@ -410,7 +409,7 @@ $(document).ready(function () {
 <script type="text/javascript">
 	var coordinates = []
 	var path
-	var SITE_URL = "http://marugame.abplusscar.com/";
+	var SITE_URL = "http://dbs2.abplusscar.com/";
 
 	function initHeatMap(license_no, lati, lngt) {
 		var propertiPeta = {
@@ -561,7 +560,7 @@ $(document).ready(function () {
 </script>
 <script>
 	function visitorData(data) {
-		console.log(data)
+		// console.log(data)
 		var tanggal = []
 		var viewer = []
 		for (var key in data) {
