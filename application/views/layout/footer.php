@@ -34,6 +34,7 @@
         <!-- Datatables -->
         <script src="<?php echo base_url() ?>assets/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
         <script src="<?php echo base_url() ?>assets/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <!-- <script src="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css"></script> -->
         <script src="https://cdn.datatables.net/select/1.3.0/js/dataTables.select.min.js"></script>
         <script src="<?php echo base_url() ?>assets/vendors/datatables.net-buttons/js/dataTables.buttons.min.js">
         </script>

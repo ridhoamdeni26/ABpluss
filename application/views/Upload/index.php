@@ -10,7 +10,7 @@
     <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
             <div class="x_title">
-                <h2>Gallery Brand Photo</h2>
+                <h2>Report Photo</h2>
                 <ul class="nav navbar-right panel_toolbox">
                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                     </li>
@@ -30,46 +30,44 @@
                 <div class="clearfix"></div>
             </div>
             <div class="x_content">
-                <section class="portfolio ">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-10">
-                                <div class="btn-group btn-group-toggle " data-toggle="buttons">
-                                    <label class="btn active ">
-                                        <input type="radio" name="shuffle-filter" value="all" checked="checked" />All
-                                        Projects
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-
-                            <div class="col-lg-2 col-md-4 col-sm-3 col-xs-6">
-                                <div class="campaign_icon_box ">
-                                    <a href="<?php echo site_url() ?>Upload/brand1"><img
-                                            src="<?php echo base_url() ?>assets/build/images/logo/Radio_Republik_Indonesia_Logo.jpg"
-                                            class="w-100 d-block"></a>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-2 col-md-4 col-sm-3 col-xs-6">
-                                <div class="campaign_icon_box ">
-                                    <a href="#"><img
-                                            src="<?php echo base_url() ?>assets/build/images/logo/Rexona_logotype_2.jpeg"
-                                            class="w-100 d-block"></a>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-2 col-md-4 col-sm-3 col-xs-6">
-                                <div class="campaign_icon_box ">
-                                    <a href="#"><img src="<?php echo base_url() ?>assets/build/images/logo/bankdbs.jpg"
-                                            class="w-100 d-block"></a>
-                                </div>
-                            </div>
-
-                        </div>
-                </section>
+                <table id="example" class="table table-striped table-bordered" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>Plat Nomor</th>
+                            <th>Foto 1</th>
+                            <th>Foto 2</th>
+                            <th>Foto 3</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
 </div>
+<script>
+    $(document).ready(function () {
+        var datareport = [
+            ["1", "B1234BER", "<?php echo base_url() ?>assets/build/images/full_back_window.jpg",
+                "<?php echo base_url() ?>assets/build/images/full_back_body1.jpg",
+                "<?php echo base_url() ?>assets/build/images/full_half_body.jpg"
+            ],
+            ["2", "B1234LIM", "<?php echo base_url() ?>assets/build/images/full_back_window.jpg",
+                "<?php echo base_url() ?>assets/build/images/full_back_body1.jpg",
+                "<?php echo base_url() ?>assets/build/images/full_half_body.jpg"
+            ]
+        ];
+
+        var table = $('#example').DataTable({
+            data: datareport,
+            columnDefs: [{
+                targets: [2, 3, 4],
+                render: function (data) {
+                    return '<img height="50%" width="50%" src="' + data + '">'
+                }
+            }]
+        })
+    });
+</script>
