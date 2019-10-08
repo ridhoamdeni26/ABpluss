@@ -1,0 +1,31 @@
+{
+    "data": [{
+        "id": "1",
+        "nomor_plat": "ABC",
+        "foto": "/mwm/assets/build/images/full_back_window.jpg",
+        "foto2": "/mwm/assets/build/images/full_back_body1.jpg",
+        "foto3": "/mwm/assets/build/images/full_half_body.jpg",
+        "last_visited_datetime": "2018-12-06 13:00:00+00:00"
+    }, {
+        "id": "2",
+        "nomor_plat": "XYZ",
+        "foto": "/mwm/assets/build/images/full_back_window.jpg",
+        "foto2": "/mwm/assets/build/images/full_back_body1.jpg",
+        "foto3": "/mwm/assets/build/images/full_half_body.jpg",
+        "last_visited_datetime": "2018-12-04 14:00:00+00:00"
+    }, {
+        "id": "3",
+        "nomor_plat": "PQR",
+        "foto": "/mwm/assets/build/images/full_back_window.jpg",
+        "foto2": "/mwm/assets/build/images/full_back_body1.jpg",
+        "foto3": "/mwm/assets/build/images/full_half_body.jpg",
+        "last_visited_datetime": "2018-12-03 12:04:45+01:00"
+    }, {
+        "id": "4",
+        "nomor_plat": "SIM",
+        "foto": "",
+        "foto2": "/mwm/assets/build/images/full_back_body1.jpg",
+        "foto3": "/mwm/assets/build/images/full_half_body.jpg",
+        "last_visited_datetime": "2018-12-03 12:04:45+01:00"
+    }]
+}

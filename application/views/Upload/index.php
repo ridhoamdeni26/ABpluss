@@ -47,26 +47,59 @@
         </div>
     </div>
 </div>
+<script src="<?php echo site_url()?>assets/vendors/jquery/dist/jquery.min.js"></script>
 <script>
     $(document).ready(function () {
-        var datareport = [
-            ["1", "B1234BER", "<?php echo base_url() ?>assets/build/images/full_back_window.jpg",
-                "<?php echo base_url() ?>assets/build/images/full_back_body1.jpg",
-                "<?php echo base_url() ?>assets/build/images/full_half_body.jpg"
-            ],
-            ["2", "B1234LIM", "<?php echo base_url() ?>assets/build/images/full_back_window.jpg",
-                "<?php echo base_url() ?>assets/build/images/full_back_body1.jpg",
-                "<?php echo base_url() ?>assets/build/images/full_half_body.jpg"
-            ]
-        ];
+        var SITE_URL = "<?php echo site_url()?>";
 
         var table = $('#example').DataTable({
-            data: datareport,
-            columnDefs: [{
-                targets: [2, 3, 4],
-                render: function (data) {
-                    return '<img height="50%" width="50%" src="' + data + '">'
+            ajax: {
+                "url": SITE_URL + 'assets/test.json',
+                "type": "GET",
+                "cache": true,
+                "dataSrc": "data"
+            },
+
+            columns: [{
+                    data: 'id'
+                },
+                {
+                    data: 'nomor_plat'
+                },
+                {
+                    data: "foto",
+                    "render": function (data, type, row) {
+                        if (row.foto === "") {
+                            return '<img height="25%" width="25%" src="<?php echo base_url() ?>assets/build/images/no-photo.png">'
+                        } else {
+                            return '<img height="50%" width="50%" src="' + row.foto + '">'
+                        }
+                    }
+                },
+                {
+                    data: "foto2",
+                    "render": function (data, type, row) {
+                        if (row.foto2 === "") {
+                            return '<img height="25%" width="25%" src="<?php echo base_url() ?>assets/build/images/no-photo.png">'
+                        } else {
+                            return '<img height="50%" width="50%" src="' + row.foto2 + '">'
+                        }
+                    }
+                },
+                {
+                    data: "foto3",
+                    "render": function (data, type, row) {
+                        if (row.foto3 === "") {
+                            return '<img height="25%" width="25%" src="<?php echo base_url() ?>assets/build/images/no-photo.png">'
+                        } else {
+                            return '<img height="50%" width="50%" src="' + row.foto3 + '">'
+                        }
+                    }
                 }
+            ],
+            columnDefs: [{
+                orderable: false,
+                targets: [2, 3, 4],
             }]
         })
     });
