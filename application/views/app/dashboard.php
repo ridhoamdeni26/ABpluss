@@ -67,12 +67,6 @@
 				</div>
 				<br>
 				<div class="col-md-12 col-sm-12 col-xs-12">
-					<div id="chart-js">
-						<div class="clearfix"></div>
-					</div>
-				</div>
-				<br>
-				<div class="col-md-12 col-sm-12 col-xs-12">
 					<table id="drive" class="table table-striped table-bordered" style="width:100%">
 						<thead>
 							<tr>
@@ -535,11 +529,11 @@
 		});
 	}
 
-	function getSelectedDriver() {
-		console.log($('#drive2').DataTable().row({
-			selected: true
-		}));
-	}
+	// function getSelectedDriver() {
+	// 	console.log($('#drive2').DataTable().row({
+	// 		selected: true
+	// 	}));
+	// }
 	$('#locate').click(function () {
 		selected_data = []
 		data = tableDriver.rows('.selected').data();
@@ -563,17 +557,15 @@
 		// console.log(data)
 		var tanggal = []
 		var viewer = []
+		var mileage = []
 		for (var key in data) {
 			viewer.push(data[key]['viewer'])
 			tanggal.push(key)
+			mileage.push(data[key]['mileage'])
 		}
 		Highcharts.chart('chart-js', {
 			title: {
-				text: 'Total Impression'
-			},
-
-			subtitle: {
-				text: 'Plain'
+				text: 'Total Mileage'
 			},
 
 			xAxis: {
@@ -581,10 +573,10 @@
 			},
 
 			series: [{
-				name: 'Impression',
+				name: 'Mileage',
 				type: 'column',
-				color: '#89c342',
-				data: viewer,
+				color: '#7FFFD4',
+				data: mileage,
 				showInLegend: false,
 				style: {
 					fontSize: '13px',

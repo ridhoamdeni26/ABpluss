@@ -4,6 +4,7 @@
     <ul class="nav side-menu">
       <li><a href="<?php echo site_url() ?>Welcome/index"><i class="fa fa-home"></i> Dashboard </a></li>
       <li><a href="<?php echo site_url() ?>Report/index"><i class="fa fa-book"></i> Report </a></li>
+      <li><a href="<?php echo site_url() ?>Grafik/index"><i class="fa fa-bar-chart"></i> Grafik </a></li>
       <li><a href="<?php echo site_url() ?>ABAnalytic/index"><i class="fa fa-money"></i> AB Analytic </a></li>
       <li><a href="<?php echo site_url() ?>Upload/index"><i class="fa fa-building"></i> Report Photo </a></li>
       <li><a href="<?php echo site_url() ?>Record/index"><i class="fa fa-video-camera"></i> Record </a></li>
