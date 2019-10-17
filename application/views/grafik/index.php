@@ -19,27 +19,27 @@
 					</li>
 				</ul>
 				<div class="clearfix"></div>
-            </div>
-            <div class="x_content">
-                <div class="col-md-12 col-sm-12 col-xs-12">
+			</div>
+			<div class="x_content">
+				<div class="col-md-12 col-sm-12 col-xs-12">
 					<div id="chart-js">
 						<div class="clearfix"></div>
 					</div>
-                </div>
-                <div class="cleafix"></div>
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div id="chart-js2">
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                        <div id="chart-area" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto">
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
-            </div>
-        </div>
-    </div>
+				</div>
+				<div class="cleafix"></div>
+				<div class="col-md-12 col-sm-12 col-xs-12">
+					<div id="chart-js2">
+						<div class="clearfix"></div>
+					</div>
+				</div>
+				<div class="col-md-12 col-sm-12 col-xs-12">
+					<div id="chart-area" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto">
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 <!-- <script src="<?php echo site_url()?>assets/vendors/jquery/dist/jquery.min.js"></script> -->
@@ -47,69 +47,80 @@
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
 <script type="text/javascript">
-    $(document).ready(function () {
+	$(document).ready(function () {
 		getChart();
-        getArea();
+		// getArea();	
 	});
-    var SITE_URL_DBS2 = "http://dbs2.abplusscar.com/";
-    var SITE_URL_DBS1 = "http://bankdbs.abplusscar.com/";
+	var SITE_URL_DBS2 = "http://dbs2.abplusscar.com/";
+	var SITE_URL_DBS1 = "http://bankdbs.abplusscar.com/";
 
-    function getArea(){
-        $.ajax({
-            url: SITE_URL_DBS1 + 'gps/lastlocations/',
+	function getArea() {
+		$.ajax({
+			url: SITE_URL_DBS1 + 'gps/lastlocations/',
 			method: 'get',
 			dataType: 'json',
 			async: false,
 			cache: false,
 			success: function (result) {
-                var cities = result['results'][0]['cities']
-                dataAreaPie(cities)
-            }
-        })
-    }
+				var cities = result['results'][0]['cities']
+				dataAreaPie(cities)
+			}
+		})
+	}
 
-    function dataAreaPie(cities){
-        name_cities = []
-        value_cities = []
-        for (var key in cities) {
-                name_cities.push(key)
-                value_cities.push(cities[key])
-            }
-            Highcharts.chart('chart-area', {
-                chart: {
-                    plotBackgroundColor: null,
-                    plotBorderWidth: null,
-                    plotShadow: false,
-                    type: 'pie'
-                },
-                title: {
-                    text: 'Browser market shares in January, 2018'
-                },
-                tooltip: {
-                    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-                },
-                plotOptions: {
-                    pie: {
-                        allowPointSelect: true,
-                        cursor: 'pointer',
-                        dataLabels: {
-                            enabled: true,
-                            format: '<b>{point.name}</b>: {point.percentage:.1f} %'
-                        }
-                    }
-                },
-                series: [{
-                    name: 'Brands',
-                    colorByPoint: true,
-                    data: [{
-                        name: name_cities,
-                        y: value_cities
-                    }]
-                }]
-            });
-    }
+	function dataAreaPie(cities) {
+		myJSON = []
+		for (var key in cities) {
+			var test_hasil = ({
+				name: key,
+				y: parseFloat(cities[key])
+			})
+			myJSON.push(test_hasil);
+		}
+		const options = {
+			chart: {
+				plotBackgroundColor: null,
+				plotBorderWidth: null,
+				plotShadow: false,
+				type: 'pie'
+			},
+			title: {
+				text: 'Browser market shares in January, 2018'
+			},
+			tooltip: {
+				pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+			},
 
-    function getChart() {
+			plotOptions: {
+				pie: {
+					allowPointSelect: true,
+					cursor: 'pointer',
+					dataLabels: {
+						enabled: false
+					},
+					showInLegend: true
+				},
+				series: {
+					minPointLength: 3
+				}
+			},
+
+			series: [{
+				data: []
+			}]
+		}
+		const chart = Highcharts.chart('chart-area', options)
+		// setTimeout(() => {
+			// const data = [{"name":"Bandung","y":20},{"name":"Jabodetabek","y":55},{"name":"Surabaya","y":20}]
+			// console.log(myJSON_hasil)
+			const myJSON_hasil = JSON.stringify(myJSON);
+			console.log(myJSON_hasil)
+			chart.series[0].setData(myJSON_hasil)
+		// }, 2000)
+	}
+
+
+	function getChart() {
 		$.ajax({
 			url: SITE_URL_DBS2 + 'gps/dailyreport/',
 			method: 'get',
@@ -123,7 +134,7 @@
 		});
 	}
 
-    function visitorData(data) {
+	function visitorData(data) {
 		var tanggal = []
 		var viewer = []
 		var mileage = []
@@ -133,7 +144,7 @@
 			mileage.push(data[key]['mileage'])
 		}
 
-        Highcharts.chart('chart-js2', {
+		Highcharts.chart('chart-js2', {
 			title: {
 				text: 'Total Impression'
 			},
@@ -141,9 +152,9 @@
 			xAxis: {
 				categories: tanggal,
 			},
-            yAxis: {
-                alternateGridColor: '#FDFFD5'
-            },
+			yAxis: {
+				alternateGridColor: '#FDFFD5'
+			},
 
 			series: [{
 				name: 'Impression',
@@ -158,7 +169,7 @@
 			}],
 		});
 
-        //chart Mileage
+		//chart Mileage
 		Highcharts.chart('chart-js', {
 			title: {
 				text: 'Total Mileage'
@@ -166,14 +177,14 @@
 
 			xAxis: {
 				categories: tanggal,
-                style: {
+				style: {
 					fontSize: '13px',
 					fontFamily: 'Verdana, sans-serif'
 				},
 			},
-            yAxis: {
-                alternateGridColor: '#FDFFD5'
-            },
+			yAxis: {
+				alternateGridColor: '#FDFFD5'
+			},
 
 			series: [{
 				name: 'Mileage',
