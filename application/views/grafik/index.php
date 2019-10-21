@@ -69,19 +69,8 @@
 	}
 
 	function dataAreaPie(cities) {
-		myJSON = []
-		for (var key in cities) {
-			var test_hasil = ({
-				name: key,
-				y: parseFloat(cities[key])
-			})
-			myJSON.push(test_hasil);
-		}
 		const options = {
 			chart: {
-				plotBackgroundColor: null,
-				plotBorderWidth: null,
-				plotShadow: false,
 				type: 'pie'
 			},
 			title: {
@@ -109,13 +98,22 @@
 				data: []
 			}]
 		}
+		myJSON = []
+		for (var key in cities) {
+			var test_hasil = ({
+				name: key,
+				y: parseFloat(cities[key])
+			})
+			myJSON.push(test_hasil);
+		}
 		const chart = Highcharts.chart('chart-area', options)
+		console.log(myJSON)
 		// setTimeout(() => {
 			// const data = [{"name":"Bandung","y":20},{"name":"Jabodetabek","y":55},{"name":"Surabaya","y":20}]
 			// console.log(myJSON_hasil)
 			const myJSON_hasil = JSON.stringify(myJSON);
 			console.log(myJSON_hasil)
-			chart.series[0].setData(myJSON_hasil)
+			chart.series[0].setData(myJSON)
 		// }, 2000)
 	}
 
